@@ -8,7 +8,7 @@ export default config({
     projects: collection({
       label: "Projects",
       slugField: "title",
-      path: "content/projects/*",
+      path: "content/projects/*/",
       format: { contentField: "content" },
       schema: {
         title: fields.slug({ name: { label: "Title" } }),
@@ -26,10 +26,9 @@ export default config({
           ],
           defaultValue: "Web Design",
         }),
-        coverImage: fields.image({
-          label: "Cover Image",
-          directory: "public/images/projects",
-          publicPath: "/images/projects",
+        coverImage: fields.text({
+          label: "Cover Image Path",
+          defaultValue: "",
         }),
         year: fields.text({
           label: "Year",
@@ -54,7 +53,7 @@ export default config({
         ),
         featured: fields.checkbox({
           label: "Featured on Home Page",
-          defaultValue: false,
+          defaultValue: true,
         }),
         sortOrder: fields.integer({
           label: "Sort Order",

@@ -69,7 +69,7 @@ export default function AboutPage() {
             <TiltCard maxTilt={6}>
               <div className={styles.aboutImageWrapper}>
                 <Image
-                  src="/images/profile.jpg"
+                  src="/images/profile.png"
                   alt="Emilita D. Cristobal — UI/UX Designer"
                   fill
                   style={{ objectFit: "cover" }}
