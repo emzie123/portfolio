@@ -4,6 +4,7 @@ import { reader } from "@/lib/reader";
 import ScrollReveal from "@/components/ScrollReveal";
 import ProjectCard from "@/components/ProjectCard";
 import HeroAnimation from "@/components/HeroAnimation";
+import ContactButton from "@/components/ContactButton";
 import styles from "./home.module.css";
 
 export default async function HomePage() {
@@ -76,12 +77,9 @@ export default async function HomePage() {
               <Link href="/work" className="btn btn--primary">
                 View My Work
               </Link>
-              <a
-                href="mailto:cristobalemilita@gmail.com"
-                className="btn btn--outline"
-              >
+              <ContactButton className="btn btn--outline">
                 Get in Touch
-              </a>
+              </ContactButton>
             </div>
           </div>
 

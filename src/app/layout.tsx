@@ -41,6 +41,8 @@ export const metadata: Metadata = {
   },
 };
 
+import { ContactProvider } from "@/components/ContactModal";
+
 export default function RootLayout({
   children,
 }: {
@@ -49,9 +51,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
       <body>
-        <Header />
-        <main style={{ paddingTop: "var(--header-height)" }}>{children}</main>
-        <Footer />
+        <ContactProvider>
+          <Header />
+          <main style={{ paddingTop: "var(--header-height)" }}>{children}</main>
+          <Footer />
+        </ContactProvider>
       </body>
     </html>
   );

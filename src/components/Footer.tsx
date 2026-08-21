@@ -1,7 +1,11 @@
+"use client";
+
+import { useContact } from "./ContactModal";
 import styles from "./Footer.module.css";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const { openContact } = useContact();
 
   return (
     <footer className={styles.footer} id="site-footer">
@@ -14,12 +18,20 @@ export default function Footer() {
         </div>
 
         <div className={styles.footerRight}>
-          <a
-            href="mailto:cristobalemilita@gmail.com"
+          <button
+            onClick={openContact}
             className={styles.footerLink}
+            type="button"
+            style={{
+              background: "none",
+              border: "none",
+              cursor: "pointer",
+              font: "inherit",
+              padding: 0,
+            }}
           >
-            Email
-          </a>
+            cristobalemilita@gmail.com
+          </button>
         </div>
       </div>
     </footer>

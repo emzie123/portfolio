@@ -5,6 +5,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import styles from "./Header.module.css";
 
+import { useContact } from "./ContactModal";
+
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/work", label: "Work" },
@@ -13,6 +15,7 @@ const navLinks = [
 
 export default function Header() {
   const pathname = usePathname();
+  const { openContact } = useContact();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -65,12 +68,13 @@ export default function Header() {
                 {link.label}
               </Link>
             ))}
-            <a
-              href="mailto:cristobalemilita@gmail.com"
+            <button
+              onClick={openContact}
               className={styles.navEmail}
+              type="button"
             >
               Get in touch
-            </a>
+            </button>
           </nav>
 
           <button
@@ -101,13 +105,17 @@ export default function Header() {
             {link.label}
           </Link>
         ))}
-        <a
-          href="mailto:cristobalemilita@gmail.com"
+        <button
+          onClick={() => {
+            setMenuOpen(false);
+            openContact();
+          }}
           className={styles.navEmail}
           style={{ fontSize: "1rem", marginTop: "1rem" }}
+          type="button"
         >
           cristobalemilita@gmail.com
-        </a>
+        </button>
       </nav>
     </>
   );

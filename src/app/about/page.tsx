@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import ScrollReveal from "@/components/ScrollReveal";
 import TiltCard from "@/components/TiltCard";
+import ContactButton from "@/components/ContactButton";
 import styles from "./about.module.css";
 
 export const metadata: Metadata = {
@@ -102,12 +103,9 @@ export default function AboutPage() {
               </p>
 
               <div className={styles.aboutContact}>
-                <a
-                  href="mailto:cristobalemilita@gmail.com"
-                  className="btn btn--primary"
-                >
+                <ContactButton className="btn btn--primary">
                   Say Hello
-                </a>
+                </ContactButton>
                 <Link href="/work" className="btn btn--outline">
                   View Work
                 </Link>
@@ -181,12 +179,16 @@ export default function AboutPage() {
             <p className="section-description" style={{ margin: "0 auto" }}>
               I&apos;m currently open to full-time UI/UX design opportunities, freelance projects, and creative collaborations.
             </p>
-            <a
-              href="mailto:cristobalemilita@gmail.com"
+            <ContactButton
               className={styles.contactEmail}
+              style={{
+                display: "inline-block",
+                marginTop: "1.5rem",
+                cursor: "pointer",
+              }}
             >
               cristobalemilita@gmail.com
-            </a>
+            </ContactButton>
           </ScrollReveal>
         </div>
       </section>
