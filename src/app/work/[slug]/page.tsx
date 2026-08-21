@@ -41,35 +41,49 @@ export async function generateMetadata({
   }
 }
 
-// Interactive Screen Data for BusWatch
+// -------------------------------------------------------------
+// BUSWATCH DATA (Mobile App)
+// -------------------------------------------------------------
 const buswatchScreens: ScreenItem[] = [
   {
     id: "parent-dashboard",
     title: "Parent Home Dashboard",
     src: "/images/projects/buswatch/routes-list.png",
-    caption: "Parent dashboard showing live real-time status of each child ('On The Bus', 'At School', 'At Home') with quick transit alerts.",
+    caption: "Parent home dashboard tracking real-time status of each child ('On The Bus', 'At School', 'At Home') with glanceable route alert cards.",
   },
   {
     id: "live-tracking",
-    title: "Live GPS Tracking",
+    title: "Live GPS & Route Telemetry",
     src: "/images/projects/buswatch/live-tracking.png",
-    caption: "Real-time interactive route map showing driver details (Mike Johnson), calibrated 10-minute ETA, and live vehicle telemetry.",
+    caption: "Real-time interactive route map showing driver details (Mike Johnson), calibrated 10-minute ETA, and live vehicle navigation path.",
   },
   {
-    id: "pickup-details",
-    title: "Driver & Pickup Details",
+    id: "driver-pickup",
+    title: "Driver & Pickup Reminder",
     src: "/images/projects/buswatch/bus-details.png",
     caption: "Driver verified profile, scheduled morning pickup time, home pickup location, and instant 'Notify me when 5 mins away' reminder trigger.",
   },
   {
-    id: "onboarding",
-    title: "Onboarding Flow",
+    id: "onboarding-1",
+    title: "Onboarding: GPS Tracking",
     src: "/images/projects/buswatch/onboarding-1.png",
-    caption: "Warm, illustrative 3-step onboarding explaining GPS tracking accuracy and peace of mind for parents.",
+    caption: "First onboarding step educating parents on accurate live GPS route updates and arrival predictability.",
   },
   {
-    id: "signup-safety",
-    title: "Safety & Medical Registration",
+    id: "onboarding-2",
+    title: "Onboarding: Instant Alerts",
+    src: "/images/projects/buswatch/onboarding-2.png",
+    caption: "Second onboarding step highlighting automated push notifications when the bus is approaching the pickup radius.",
+  },
+  {
+    id: "onboarding-3",
+    title: "Onboarding: Schedule Safety",
+    src: "/images/projects/buswatch/onboarding-3.png",
+    caption: "Third onboarding step introducing timetable schedules, stop changes, and student boarding confirmations.",
+  },
+  {
+    id: "safety-registration",
+    title: "Safety & Emergency Form",
     src: "/images/projects/buswatch/home-map.png",
     caption: "Dedicated safety registration form capturing blood type, allergies, medical conditions, and dual emergency contact information.",
   },
@@ -79,7 +93,7 @@ const buswatchFlowSteps: FlowStep[] = [
   {
     step: "Step 01",
     title: "Onboarding & Trust Building",
-    description: "Parents are introduced to real-time tracking, safety notifications, and predictable schedule updates.",
+    description: "Illustrative 3-step walkthrough introducing parents to real-time telemetry, automated reminders, and schedule safety.",
     src: "/images/projects/buswatch/onboarding-1.png",
   },
   {
@@ -96,70 +110,144 @@ const buswatchFlowSteps: FlowStep[] = [
   },
   {
     step: "Step 04",
-    title: "Driver Contact & Stop Reminders",
+    title: "Driver Contact & Reminders",
     description: "Direct contact line with bus driver and automated alerts 5 minutes prior to bus arrival.",
     src: "/images/projects/buswatch/bus-details.png",
   },
 ];
 
-// Interactive Screen Data for Verae
+const buswatchAdditionalGallery: FlowStep[] = [
+  {
+    step: "UI Screen",
+    title: "Notifications & Alert Feed",
+    description: "Comprehensive log of transit alerts, boarding timestamps, and school announcements.",
+    src: "/images/projects/buswatch/notifications.png",
+  },
+  {
+    step: "UI Screen",
+    title: "Route Timetable & Schedule",
+    description: "Detailed daily schedule with morning and afternoon pickup/drop-off time windows.",
+    src: "/images/projects/buswatch/schedule.png",
+  },
+  {
+    step: "UI Screen",
+    title: "Stop Details & Route Stops",
+    description: "Inspection view of individual stops along the bus route with estimated stop times.",
+    src: "/images/projects/buswatch/stop-details.png",
+  },
+  {
+    step: "UI Screen",
+    title: "Parent Profile & Settings",
+    description: "Account settings, student management, linked emergency contacts, and notifications.",
+    src: "/images/projects/buswatch/profile-screen.png",
+  },
+];
+
+// -------------------------------------------------------------
+// VERAE DATA (Luxury E-Commerce Dashboard)
+// -------------------------------------------------------------
 const veraeScreens: ScreenItem[] = [
   {
-    id: "orders",
-    title: "Order Management",
-    src: "/images/projects/verae/orders.png",
-    caption: "Executive order ledger displaying real-time order status counts, payment methods (GCash, Maya, PayPal), and quick action controls.",
+    id: "orders-ledger",
+    title: "Order Management Ledger",
+    src: "/images/projects/verae/orders-ledger.png",
+    caption: "Executive order ledger displaying real-time order status counts (Pending, Processing, Shipped, Delivered, Cancelled), multi-payment method tags (GCash, Maya, PayPal), and action controls.",
   },
   {
-    id: "order-details",
-    title: "Order Details & Modal",
-    src: "/images/projects/verae/order-details.png",
-    caption: "Detailed modal overlay showing purchased jewelry items, transaction totals, and 1-click invoice/label printing.",
+    id: "order-details-modal",
+    title: "Order Details & Modal Invoice",
+    src: "/images/projects/verae/order-details-modal.png",
+    caption: "Focused modal overlay showing purchased luxury items (Diamond Solitaire Ring ₱125k, Pearl Pendant ₱13k), total calculation (₱151,000), status updater, and 1-click invoice/label printing.",
   },
   {
-    id: "content-cms",
-    title: "Content & Banner CMS",
-    src: "/images/projects/verae/content-cms.png",
-    caption: "Visual banner manager allowing store managers to publish seasonal promotions and update policy copy without code.",
+    id: "add-banner-modal",
+    title: "Promotional Banner Creator",
+    src: "/images/projects/verae/add-banner-modal.png",
+    caption: "Visual marketing CMS modal allowing store managers to upload hero campaign photography, set headline copy, assign destination URLs, and choose display positions.",
   },
   {
-    id: "customers",
-    title: "Customer Directory",
-    src: "/images/projects/verae/customers.png",
-    caption: "Customer intelligence module showing lifetime value, order frequency, and verified contact profiles.",
+    id: "edit-banner-modal",
+    title: "Edit Featured Banner",
+    src: "/images/projects/verae/edit-banner-modal.png",
+    caption: "Edit modal for existing seasonal banners (Lustré Diamond Ring collection) with real-time thumbnail preview and active position ordering.",
   },
   {
-    id: "products",
-    title: "Product Catalog",
-    src: "/images/projects/verae/products.png",
-    caption: "Inventory and SKU management with category filtering, stock alerts, and high-res jewelry photography support.",
+    id: "reviews-list",
+    title: "Customer Reviews Ledger",
+    src: "/images/projects/verae/reviews-list.png",
+    caption: "Customer feedback management with verified 5-star ratings, response statuses ('Replied' / 'No Reply'), and direct inquiry escalation.",
+  },
+  {
+    id: "review-modal",
+    title: "Review Response Modal",
+    src: "/images/projects/verae/review-modal.png",
+    caption: "Detailed modal review interface showing customer feedback for Diamond Solitaire Ring, purchase date, and official verified admin response.",
+  },
+  {
+    id: "ratings-analytics",
+    title: "Product Ratings Analytics",
+    src: "/images/projects/verae/ratings-analytics.png",
+    caption: "Aggregated rating scorecard tracking average star ratings and approval rates across key jewelry SKUs (Gold Chain, Ruby Pendant, Pearl Earrings, Emerald Bracelet).",
+  },
+  {
+    id: "refund-modal",
+    title: "Refund Triage Modal",
+    src: "/images/projects/verae/refund-modal.png",
+    caption: "Refund request inspection modal showing transaction ID, payment gateway, defective claim reason, and quick 'Reject' / 'Approved' action buttons.",
   },
 ];
 
 const veraeFlowSteps: FlowStep[] = [
   {
     step: "Stage 01",
-    title: "Order Intake & Triage",
+    title: "Order Intake & Triage Ledger",
     description: "High-value orders are ingested with multi-gateway payment tags and categorized into real-time status queues.",
-    src: "/images/projects/verae/orders.png",
+    src: "/images/projects/verae/orders-ledger.png",
   },
   {
     step: "Stage 02",
-    title: "Fulfillment & Invoicing",
-    description: "Admins inspect line items, verify luxury packaging requirements, and print official invoices in a single modal.",
-    src: "/images/projects/verae/order-details.png",
+    title: "Modal Fulfillment & Invoicing",
+    description: "Admins inspect line items, verify luxury packaging requirements, and print official invoices in a single focused modal.",
+    src: "/images/projects/verae/order-details-modal.png",
   },
   {
     step: "Stage 03",
     title: "Promotional Banner Deployment",
     description: "Marketing teams deploy luxury hero banners directly to the storefront with custom CTA buttons and scheduling.",
-    src: "/images/projects/verae/content-cms.png",
+    src: "/images/projects/verae/add-banner-modal.png",
   },
   {
     step: "Stage 04",
-    title: "Customer Retention & History",
-    description: "Detailed client profiles enable personalized concierge customer service for repeat high-value jewelry buyers.",
-    src: "/images/projects/verae/customers.png",
+    title: "Review & Quality Governance",
+    description: "Concierge review response system maintaining brand trust and customer satisfaction for high-ticket jewelry.",
+    src: "/images/projects/verae/review-modal.png",
+  },
+];
+
+const veraeAdditionalGallery: FlowStep[] = [
+  {
+    step: "CMS Module",
+    title: "About & Contact Us Editor",
+    description: "Back-office copy editor for company mission, support email, phone numbers, and showroom business hours.",
+    src: "/images/projects/verae/about-cms.png",
+  },
+  {
+    step: "CMS Module",
+    title: "FAQs Knowledge Base",
+    description: "Frequently asked questions editor covering diamond certification, appraisal, and bespoke customization.",
+    src: "/images/projects/verae/faqs-cms.png",
+  },
+  {
+    step: "CMS Module",
+    title: "Return Policy Governance",
+    description: "Fine jewelry 7-day return policy and inspection terms editor.",
+    src: "/images/projects/verae/returns-cms.png",
+  },
+  {
+    step: "CMS Module",
+    title: "Privacy & Data Compliance",
+    description: "Customer data protection and secure checkout compliance policy editor.",
+    src: "/images/projects/verae/privacy-cms.png",
   },
 ];
 
@@ -193,6 +281,9 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
   const isBusWatch = slug === "buswatch";
   const screens = isBusWatch ? buswatchScreens : veraeScreens;
   const flowSteps = isBusWatch ? buswatchFlowSteps : veraeFlowSteps;
+  const additionalGallery = isBusWatch
+    ? buswatchAdditionalGallery
+    : veraeAdditionalGallery;
   const deviceType = isBusWatch ? "phone" : "desktop";
   const themeColor = isBusWatch ? "#F59E0B" : "#0F3830";
 
@@ -221,7 +312,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
       </section>
 
       <div className="container">
-        {/* Interactive Device Showcase */}
+        {/* Interactive Device Showcase with Clean Single-Screen Tabs */}
         <ScrollReveal direction="scale">
           <DeviceFrame
             type={deviceType}
@@ -286,12 +377,22 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
           </div>
         </ScrollReveal>
 
-        {/* Apple-Style User Flow Responsive Grid */}
+        {/* Primary Experience Architecture Flow (4-Card Responsive Grid) */}
         <ScrollReveal>
           <FlowGallery
             steps={flowSteps}
             title={`${project.title} — Experience Architecture & User Journey`}
-            subtitle="Step-by-step design breakdown illustrating the user interaction flow and usability decisions."
+            subtitle="Step-by-step design breakdown illustrating key user touchpoints and interface decisions."
+            aspectRatio={isBusWatch ? "phone" : "desktop"}
+          />
+        </ScrollReveal>
+
+        {/* Additional Screens & UI Kit Catalog (4-Card Responsive Grid) */}
+        <ScrollReveal>
+          <FlowGallery
+            steps={additionalGallery}
+            title={`${project.title} — Extended Design Modules & UI Catalog`}
+            subtitle="Additional interface screens, modals, and management systems designed for this platform."
             aspectRatio={isBusWatch ? "phone" : "desktop"}
           />
         </ScrollReveal>
