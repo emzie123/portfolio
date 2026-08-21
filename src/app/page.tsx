@@ -43,7 +43,7 @@ export default async function HomePage() {
       }));
     }
   } catch {
-    // CMS not initialized yet — show fallback
+    // CMS not initialized yet
   }
 
   return (
@@ -117,8 +117,7 @@ export default async function HomePage() {
                 <span className="section-label">Selected Work</span>
                 <h2 className="section-title">Recent Projects</h2>
                 <p className="section-description">
-                  A collection of my latest design work across web, mobile, and
-                  product design.
+                  A curated collection of my latest UI/UX design work across mobile applications and web dashboard platforms.
                 </p>
               </div>
             </ScrollReveal>
@@ -134,7 +133,9 @@ export default async function HomePage() {
                     year={project.year}
                     coverImage={
                       project.coverImage ||
-                      "/images/projects/fintech-dashboard.jpg"
+                      (project.slug === "buswatch"
+                        ? "/images/projects/buswatch/live-tracking.png"
+                        : "/images/projects/verae/orders.png")
                     }
                   />
                 </ScrollReveal>
@@ -174,15 +175,15 @@ export default async function HomePage() {
             <div className={styles.stats}>
               <div className={styles.statItem}>
                 <div className={styles.statNumber}>2+</div>
-                <div className={styles.statLabel}>Projects</div>
+                <div className={styles.statLabel}>Featured Case Studies</div>
               </div>
               <div className={styles.statItem}>
                 <div className={styles.statNumber}>UI/UX</div>
                 <div className={styles.statLabel}>Specialization</div>
               </div>
               <div className={styles.statItem}>
-                <div className={styles.statNumber}>∞</div>
-                <div className={styles.statLabel}>Passion</div>
+                <div className={styles.statNumber}>100%</div>
+                <div className={styles.statLabel}>Client Commitment</div>
               </div>
             </div>
           </ScrollReveal>

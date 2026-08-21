@@ -1,0 +1,139 @@
+.flowSection {
+  margin: 4rem 0;
+  padding: 3rem 0;
+  border-top: 1px solid var(--color-border-light);
+}
+
+.header {
+  margin-bottom: 2.5rem;
+}
+
+.sectionBadge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.flowTitle {
+  font-size: var(--text-3xl);
+  margin-bottom: 0.5rem;
+}
+
+.flowSubtitle {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  max-width: 600px;
+}
+
+.carouselTrack {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  padding-bottom: 1.5rem;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.carouselTrack::-webkit-scrollbar {
+  height: 6px;
+}
+
+.carouselTrack::-webkit-scrollbar-track {
+  background: var(--color-border-light);
+  border-radius: 9999px;
+}
+
+.carouselTrack::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 9999px;
+}
+
+.flowCard {
+  flex: 0 0 300px;
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  scroll-snap-align: start;
+  transition: all var(--duration-normal) var(--ease-out);
+}
+
+.flowCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-accent);
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  background: #f8fafc;
+  overflow: hidden;
+}
+
+.imagePhone {
+  height: 380px;
+}
+
+.imageDesktop {
+  height: 200px;
+}
+
+.hoverZoomBadge {
+  position: absolute;
+  bottom: 0.75rem;
+  right: 0.75rem;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(4px);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.25rem 0.6rem;
+  border-radius: 9999px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.flowCard:hover .hoverZoomBadge {
+  opacity: 1;
+}
+
+.cardContent {
+  padding: 1.25rem;
+}
+
+.stepNumber {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.cardTitle {
+  font-family: var(--font-serif);
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--color-text-primary);
+}
+
+.cardDesc {
+  font-size: 0.8125rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .flowCard {
+    flex: 0 0 260px;
+  }
+}

@@ -50,7 +50,10 @@ export default function WorkGallery({ projects }: { projects: Project[] }) {
                 category={project.category}
                 year={project.year}
                 coverImage={
-                  project.coverImage || "/images/projects/fintech-dashboard.jpg"
+                  project.coverImage ||
+                  (project.slug === "buswatch"
+                    ? "/images/projects/buswatch/live-tracking.png"
+                    : "/images/projects/verae/orders.png")
                 }
               />
             </ScrollReveal>
