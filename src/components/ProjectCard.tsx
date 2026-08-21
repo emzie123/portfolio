@@ -9,7 +9,7 @@ interface ProjectCardProps {
   summary: string;
   category: string;
   year: string;
-  coverImage: string;
+  coverImage?: string | null;
 }
 
 export default function ProjectCard({
@@ -20,46 +20,47 @@ export default function ProjectCard({
   year,
   coverImage,
 }: ProjectCardProps) {
-  return (
-    <TiltCard>
-      <Link href={`/work/${slug}`} className={styles.card} id={`project-${slug}`}>
-        <div className={styles.imageWrapper}>
-          <Image
-            src={coverImage}
-            alt={title}
-            fill
-            sizes="(max-width: 768px) 100vw, 50vw"
-            className={styles.image}
-          />
-          <div className={styles.overlay}>
-            <span className={styles.overlayText}>
-              View Case Study
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M5 12h14" />
-                <path d="m12 5 7 7-7 7" />
-              </svg>
-            </span>
-          </div>
-        </div>
+  const fallbackImage =
+    slug === "buswatch"
+      ? "/images/projects/buswatch/live-tracking.png"
+      : "/images/projects/verae/orders-ledger.png";
 
-        <div className={styles.content}>
-          <div className={styles.meta}>
-            <span className={styles.category}>{category}</span>
-            <span className={styles.dot} />
-            <span className={styles.year}>{year}</span>
+  const imageSrc = coverImage || fallbackImage;
+
+  return (
+    <Link href={`/work/${slug}`} className={styles.cardWrapper}>
+      <TiltCard maxTilt={5}>
+        <article className={styles.card}>
+          <div className={styles.imageWrapper}>
+            <div className={styles.imageInner}>
+              <Image
+                src={imageSrc}
+                alt={title}
+                fill
+                style={{ objectFit: "contain" }}
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            </div>
           </div>
-          <h3 className={styles.title}>{title}</h3>
-          <p className={styles.summary}>{summary}</p>
-        </div>
-      </Link>
-    </TiltCard>
+
+          <div className={styles.content}>
+            <div className={styles.meta}>
+              <span className={styles.category}>{category}</span>
+              <span className={styles.dot} />
+              <span className={styles.year}>{year}</span>
+            </div>
+
+            <h3 className={styles.title}>{title}</h3>
+            <p className={styles.summary}>{summary}</p>
+
+            <div className={styles.actionRow}>
+              <span className={styles.viewText}>
+                View Case Study <span className={styles.arrowIcon}>→</span>
+              </span>
+            </div>
+          </div>
+        </article>
+      </TiltCard>
+    </Link>
   );
 }

@@ -7,7 +7,7 @@ import ContactButton from "@/components/ContactButton";
 import styles from "./about.module.css";
 
 export const metadata: Metadata = {
-  title: "About",
+  title: "About — Emilita D. Cristobal",
   description:
     "Learn about Emilita D. Cristobal — a UI/UX Designer passionate about crafting intuitive, high-impact digital experiences.",
 };
@@ -15,47 +15,50 @@ export const metadata: Metadata = {
 const skills = [
   {
     icon: "🎨",
-    name: "UI Design & Prototyping",
-    desc: "Crafting pixel-perfect, accessible interfaces with Figma, interactive flows, and cohesive design tokens.",
+    name: "Interface Design & Prototyping",
+    desc: "Crafting pixel-perfect, accessible interfaces with Figma, interactive flows, and cohesive design token architectures.",
   },
   {
     icon: "🧠",
-    name: "UX Research & Strategy",
-    desc: "Conducting user interviews, journey mapping, and usability audits to uncover actionable insights.",
+    name: "UX Research & Information Architecture",
+    desc: "Conducting user interviews, journey mapping, and usability audits to uncover actionable insights and frictionless user paths.",
   },
   {
     icon: "📱",
-    name: "Mobile App Design",
-    desc: "Architecting touch-friendly mobile products for iOS and Android with strict adherence to HIG and Material 3.",
+    name: "Mobile Ecosystem Design",
+    desc: "Architecting touch-friendly mobile products for iOS and Android with strict adherence to Apple HIG and Material Design.",
   },
   {
     icon: "🖥️",
-    name: "Web & SaaS Dashboards",
-    desc: "Structuring high-density data tables, e-commerce back-offices, and responsive multi-tier web platforms.",
+    name: "SaaS & High-Density Dashboards",
+    desc: "Structuring complex data tables, e-commerce back-offices, and multi-tier management workflows.",
   },
   {
     icon: "🎯",
-    name: "Design Systems",
-    desc: "Building scalable component libraries, auto-layout foundations, and variant architectures.",
+    name: "Design Systems & Token Libraries",
+    desc: "Building scalable auto-layout components, variant sets, and documented token guidelines for seamless developer hand-off.",
   },
   {
     icon: "⚡",
     name: "Interaction & Micro-Animations",
-    desc: "Designing state transitions, gestures, and celebratory moments that elevate user engagement.",
+    desc: "Designing tactile state transitions, gestures, and celebratory moments that elevate product engagement.",
   },
 ];
 
 const approach = [
   {
-    title: "1. Research & Discovery",
+    step: "Phase 01",
+    title: "Research & Problem Discovery",
     desc: "I begin by deeply understanding user behavior, business KPIs, and technical constraints. Through stakeholder interviews, competitor benchmarking, and journey maps, I uncover the core problems to solve.",
   },
   {
-    title: "2. Wireframing & Iterative Design",
-    desc: "Moving from low-fidelity sketches to interactive high-fidelity prototypes. Every design choice—from typography scale to color contrast—is purposeful, tested, and refined through usability feedback.",
+    step: "Phase 02",
+    title: "Wireframing & Rapid Iteration",
+    desc: "Moving from low-fidelity architecture to interactive high-fidelity prototypes. Every design choice—from typography scale to color contrast—is purposeful, tested, and refined through usability feedback.",
   },
   {
-    title: "3. Design System & Developer Hand-off",
+    step: "Phase 03",
+    title: "Design Systems & Production Hand-off",
     desc: "Delivering fully documented design tokens, component variants, and interactive states to engineering teams, ensuring flawless fidelity from Figma canvas to production code.",
   },
 ];
@@ -67,7 +70,7 @@ export default function AboutPage() {
       <section className={styles.aboutHero} id="about-hero">
         <div className={`container ${styles.aboutHeroInner}`}>
           <ScrollReveal direction="left">
-            <TiltCard maxTilt={6}>
+            <TiltCard maxTilt={5}>
               <div className={styles.aboutImageWrapper}>
                 <Image
                   src="/images/profile.png"
@@ -75,7 +78,7 @@ export default function AboutPage() {
                   fill
                   style={{ objectFit: "cover" }}
                   priority
-                  sizes="(max-width: 1024px) 320px, 420px"
+                  sizes="(max-width: 1024px) 360px, 420px"
                 />
                 <div className={styles.statusBadge}>
                   <span className={styles.statusDot} />
@@ -87,9 +90,9 @@ export default function AboutPage() {
 
           <ScrollReveal direction="right">
             <div>
-              <span className="section-label">About Me</span>
+              <span className="section-label">About Emilita</span>
               <h1 className={styles.aboutName}>Emilita D. Cristobal</h1>
-              <span className={styles.aboutRole}>UI/UX Designer</span>
+              <span className={styles.aboutRole}>Senior UI/UX Designer</span>
               <p className={styles.aboutBio}>
                 Hi, I&apos;m Emilita — a UI/UX designer passionate about designing
                 interfaces that feel effortless, intuitive, and visually elevated.
@@ -107,7 +110,7 @@ export default function AboutPage() {
                   Say Hello
                 </ContactButton>
                 <Link href="/work" className="btn btn--outline">
-                  View Work
+                  View Case Studies
                 </Link>
               </div>
             </div>
@@ -115,12 +118,12 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Skills */}
+      {/* Skills (Apple Bento Grid) */}
       <section className={styles.skills} id="skills">
         <div className="container">
           <ScrollReveal>
             <div className="section-header">
-              <span className="section-label">Expertise</span>
+              <span className="section-label">Capabilities</span>
               <h2 className="section-title">Skills & Disciplines</h2>
               <p className="section-description">
                 The technical expertise, design frameworks, and tools I use to deliver end-to-end digital products.
@@ -130,7 +133,7 @@ export default function AboutPage() {
 
           <div className={styles.skillsGrid}>
             {skills.map((skill, i) => (
-              <ScrollReveal key={skill.name} delay={i * 0.08}>
+              <ScrollReveal key={skill.name} delay={i * 0.06}>
                 <div className={styles.skillCard}>
                   <div className={styles.skillIcon}>{skill.icon}</div>
                   <h3 className={styles.skillName}>{skill.name}</h3>
@@ -147,8 +150,8 @@ export default function AboutPage() {
         <div className="container">
           <ScrollReveal>
             <div className="section-header">
-              <span className="section-label">Design Methodology</span>
-              <h2 className="section-title">My Approach</h2>
+              <span className="section-label">Methodology</span>
+              <h2 className="section-title">My Design Approach</h2>
               <p className="section-description">
                 A structured, user-validated framework engineered for clarity, speed, and cross-functional collaboration.
               </p>
@@ -157,8 +160,9 @@ export default function AboutPage() {
 
           <div className={styles.approachGrid}>
             {approach.map((item, i) => (
-              <ScrollReveal key={item.title} delay={i * 0.15}>
+              <ScrollReveal key={item.title} delay={i * 0.1}>
                 <div className={styles.approachCard}>
+                  <span className={styles.approachStepPill}>{item.step}</span>
                   <h3 className={styles.approachTitle}>{item.title}</h3>
                   <p className={styles.approachDesc}>{item.desc}</p>
                 </div>

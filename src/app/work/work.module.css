@@ -1,53 +1,75 @@
-.pageHeader {
-  padding: var(--space-16) 0 var(--space-12);
+.workHeader {
+  padding: 4rem 0 3rem;
   text-align: center;
 }
 
-.pageTitle {
-  font-size: var(--text-5xl);
-  margin-bottom: var(--space-4);
-}
-
-.pageDescription {
-  font-size: var(--text-lg);
-  max-width: 560px;
+.workHeaderInner {
+  max-width: 680px;
   margin: 0 auto;
 }
 
-/* Filter Bar */
-.filterBar {
+.workTitle {
+  font-size: var(--text-5xl);
+  font-weight: 700;
+  letter-spacing: var(--tracking-tighter);
+  margin-bottom: 1rem;
+}
+
+.workSubtitle {
+  font-size: var(--text-lg);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+}
+
+.filters {
   display: flex;
-  align-items: center;
   justify-content: center;
-  gap: var(--space-3);
-  margin-bottom: var(--space-12);
+  gap: 0.5rem;
+  margin-bottom: 3.5rem;
   flex-wrap: wrap;
 }
 
-/* Project Grid */
-.projectGrid {
+.filterBtn {
+  padding: 0.45rem 1rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  transition: all var(--duration-fast) var(--ease-spring);
+  cursor: pointer;
+}
+
+.filterBtn:hover {
+  color: var(--color-text-primary);
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.filterActive {
+  background: var(--color-text-primary);
+  color: #FFFFFF;
+  border-color: var(--color-text-primary);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-8);
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+  margin-bottom: 6rem;
 }
 
 .emptyState {
-  grid-column: 1 / -1;
   text-align: center;
-  padding: var(--space-20) 0;
-}
-
-.emptyState h3 {
-  font-size: var(--text-2xl);
-  margin-bottom: var(--space-4);
-}
-
-.emptyState p {
+  padding: 5rem 0;
+  color: var(--color-text-secondary);
   font-size: var(--text-lg);
 }
 
-@media (max-width: 768px) {
-  .projectGrid {
+@media (max-width: 900px) {
+  .grid {
     grid-template-columns: 1fr;
+    gap: 2rem;
   }
 }

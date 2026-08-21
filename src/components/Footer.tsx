@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useContact } from "./ContactModal";
 import styles from "./Footer.module.css";
 
@@ -18,17 +19,16 @@ export default function Footer() {
         </div>
 
         <div className={styles.footerRight}>
+          <Link href="/work" className={styles.footerLink}>
+            Work
+          </Link>
+          <Link href="/about" className={styles.footerLink}>
+            About
+          </Link>
           <button
             onClick={openContact}
-            className={styles.footerLink}
+            className={styles.footerEmailBtn}
             type="button"
-            style={{
-              background: "none",
-              border: "none",
-              cursor: "pointer",
-              font: "inherit",
-              padding: 0,
-            }}
           >
             cristobalemilita@gmail.com
           </button>

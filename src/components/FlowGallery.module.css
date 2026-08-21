@@ -1,7 +1,7 @@
 .flowSection {
-  margin: 4rem 0 2rem;
-  padding: 3rem 0 1rem;
-  border-top: 1px solid var(--color-border-light);
+  margin: 5rem 0 3rem;
+  padding: 4rem 0 1rem;
+  border-top: 1px solid var(--color-border);
 }
 
 .header {
@@ -21,6 +21,8 @@
 
 .flowTitle {
   font-size: var(--text-3xl);
+  font-weight: 700;
+  letter-spacing: var(--tracking-tight);
   margin-bottom: 0.5rem;
   color: var(--color-text-primary);
 }
@@ -32,7 +34,7 @@
   line-height: 1.6;
 }
 
-/* 4-Column Responsive Grid — No Sideways Scrollbars */
+/* 4-Column Responsive Grid (No Sideways Scrollbars) */
 .stepsGrid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -42,26 +44,26 @@
 
 .stepCard {
   background: var(--color-surface);
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-border);
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  transition: all var(--duration-normal) var(--ease-out);
+  transition: all var(--duration-normal) var(--ease-spring);
 }
 
 .stepCard:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-  border-color: var(--color-accent);
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+  border-color: rgba(0, 0, 0, 0.16);
 }
 
 .imageWrapper {
   position: relative;
   width: 100%;
-  background: #f8fafc;
+  background: #F5F5F7;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -84,8 +86,8 @@
   position: absolute;
   inset: 0;
   background: rgba(15, 23, 42, 0.25);
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -100,10 +102,10 @@
   background: rgba(255, 255, 255, 0.95);
   color: var(--color-text-primary);
   font-size: 0.75rem;
-  font-weight: 500;
-  padding: 0.35rem 0.75rem;
+  font-weight: 600;
+  padding: 0.4rem 0.85rem;
   border-radius: var(--radius-full);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .stepCard:hover .zoomOverlay {
@@ -111,7 +113,7 @@
 }
 
 .cardInfo {
-  padding: 1.25rem;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -124,17 +126,17 @@
   text-transform: uppercase;
   color: var(--color-accent);
   background: var(--color-accent-light);
-  padding: 0.2rem 0.55rem;
+  padding: 0.2rem 0.6rem;
   border-radius: var(--radius-full);
   display: inline-block;
   align-self: flex-start;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.75rem;
 }
 
 .cardTitle {
-  font-family: var(--font-serif);
   font-size: 1.0625rem;
   font-weight: 600;
+  letter-spacing: -0.01em;
   margin-bottom: 0.5rem;
   color: var(--color-text-primary);
   line-height: 1.35;

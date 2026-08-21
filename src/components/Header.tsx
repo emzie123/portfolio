@@ -3,12 +3,11 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useContact } from "./ContactModal";
 import styles from "./Header.module.css";
 
-import { useContact } from "./ContactModal";
-
 const navLinks = [
-  { href: "/", label: "Home" },
+  { href: "/", label: "Overview" },
   { href: "/work", label: "Work" },
   { href: "/about", label: "About" },
 ];
@@ -21,7 +20,7 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+      setScrolled(window.scrollY > 15);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -52,45 +51,49 @@ export default function Header() {
         id="site-header"
       >
         <div className={styles.headerInner}>
-          <Link href="/" className={styles.logo}>
-            Emilita
-          </Link>
+          <div className={styles.navContainer}>
+            <Link href="/" className={styles.logo}>
+              <span className={styles.logoDot} />
+              Emilita Cristobal
+            </Link>
 
-          <nav className={styles.nav}>
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`${styles.navLink} ${
-                  pathname === link.href ? styles.active : ""
-                }`}
+            <nav className={styles.nav}>
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`${styles.navLink} ${
+                    pathname === link.href ? styles.active : ""
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              ))}
+              <button
+                onClick={openContact}
+                className={styles.navActionBtn}
+                type="button"
               >
-                {link.label}
-              </Link>
-            ))}
+                Get in touch
+              </button>
+            </nav>
+
             <button
-              onClick={openContact}
-              className={styles.navEmail}
+              className={`${styles.menuButton} ${menuOpen ? styles.open : ""}`}
+              onClick={() => setMenuOpen(!menuOpen)}
+              aria-label="Toggle menu"
+              id="menu-toggle"
               type="button"
             >
-              Get in touch
+              <span className={styles.menuLine} />
+              <span className={styles.menuLine} />
+              <span className={styles.menuLine} />
             </button>
-          </nav>
-
-          <button
-            className={`${styles.menuButton} ${menuOpen ? styles.open : ""}`}
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Toggle menu"
-            id="menu-toggle"
-          >
-            <span className={styles.menuLine} />
-            <span className={styles.menuLine} />
-            <span className={styles.menuLine} />
-          </button>
+          </div>
         </div>
       </header>
 
-      {/* Mobile Navigation */}
+      {/* Mobile Navigation Drawer */}
       <nav
         className={`${styles.mobileNav} ${menuOpen ? styles.open : ""}`}
         id="mobile-nav"
@@ -110,11 +113,11 @@ export default function Header() {
             setMenuOpen(false);
             openContact();
           }}
-          className={styles.navEmail}
-          style={{ fontSize: "1rem", marginTop: "1rem" }}
+          className={styles.navActionBtn}
+          style={{ width: "100%", padding: "0.75rem", marginTop: "0.5rem" }}
           type="button"
         >
-          cristobalemilita@gmail.com
+          Get in touch
         </button>
       </nav>
     </>
