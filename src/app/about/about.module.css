@@ -1,0 +1,213 @@
+.aboutHero {
+  padding: var(--space-16) 0;
+}
+
+.aboutHeroInner {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: var(--space-16);
+  align-items: center;
+}
+
+.aboutImageWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 3 / 4;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--color-accent-light) 0%, var(--color-border-light) 100%);
+}
+
+.aboutPlaceholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-serif);
+  font-size: var(--text-6xl);
+  color: var(--color-accent);
+  opacity: 0.3;
+}
+
+.aboutName {
+  font-size: var(--text-5xl);
+  margin-bottom: var(--space-2);
+}
+
+.aboutRole {
+  font-family: var(--font-sans);
+  font-size: var(--text-lg);
+  font-weight: 400;
+  color: var(--color-accent);
+  margin-bottom: var(--space-8);
+  display: block;
+}
+
+.aboutBio {
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-6);
+}
+
+.aboutContact {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-top: var(--space-8);
+}
+
+/* Skills Section */
+.skills {
+  padding: var(--space-16) 0;
+  border-top: 1px solid var(--color-border-light);
+}
+
+.skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--space-6);
+}
+
+.skillCard {
+  padding: var(--space-6);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border-light);
+  transition: all var(--duration-normal) var(--ease-out);
+}
+
+.skillCard:hover {
+  border-color: var(--color-accent);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.skillIcon {
+  font-size: var(--text-2xl);
+  margin-bottom: var(--space-3);
+}
+
+.skillName {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-1);
+}
+
+.skillDesc {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-normal);
+}
+
+/* Approach Section */
+.approach {
+  padding: var(--space-16) 0;
+  border-top: 1px solid var(--color-border-light);
+}
+
+.approachGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-8);
+  counter-reset: approach;
+}
+
+.approachCard {
+  counter-increment: approach;
+  padding: var(--space-8) var(--space-6);
+}
+
+.approachCard::before {
+  content: "0" counter(approach);
+  font-family: var(--font-serif);
+  font-size: var(--text-4xl);
+  font-weight: 600;
+  color: var(--color-border);
+  display: block;
+  margin-bottom: var(--space-4);
+  line-height: 1;
+}
+
+.approachTitle {
+  font-size: var(--text-xl);
+  margin-bottom: var(--space-3);
+}
+
+.approachDesc {
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+}
+
+/* Contact Section */
+.contact {
+  padding: var(--space-16) 0;
+  border-top: 1px solid var(--color-border-light);
+  text-align: center;
+}
+
+.contactEmail {
+  font-family: var(--font-serif);
+  font-size: var(--text-3xl);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  transition: color var(--duration-fast) var(--ease-out);
+  display: inline-block;
+  margin-top: var(--space-6);
+  position: relative;
+}
+
+.contactEmail::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--duration-normal) var(--ease-out);
+}
+
+.contactEmail:hover {
+  color: var(--color-accent);
+}
+
+.contactEmail:hover::after {
+  transform: scaleX(1);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .aboutHeroInner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .aboutImageWrapper {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .aboutContact {
+    justify-content: center;
+  }
+
+  .approachGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .contactEmail {
+    font-size: var(--text-xl);
+  }
+
+  .skillsGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
