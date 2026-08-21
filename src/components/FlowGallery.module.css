@@ -1,11 +1,12 @@
 .flowSection {
-  margin: 4rem 0;
-  padding: 3rem 0;
+  margin: 4rem 0 2rem;
+  padding: 3rem 0 1rem;
   border-top: 1px solid var(--color-border-light);
 }
 
 .header {
   margin-bottom: 2.5rem;
+  text-align: left;
 }
 
 .sectionBadge {
@@ -21,119 +22,149 @@
 .flowTitle {
   font-size: var(--text-3xl);
   margin-bottom: 0.5rem;
+  color: var(--color-text-primary);
 }
 
 .flowSubtitle {
   font-size: 1rem;
   color: var(--color-text-secondary);
-  max-width: 600px;
+  max-width: 680px;
+  line-height: 1.6;
 }
 
-.carouselTrack {
-  display: flex;
+/* 4-Column Responsive Grid — No Sideways Scrollbars */
+.stepsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
-  overflow-x: auto;
-  padding-bottom: 1.5rem;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
+  width: 100%;
 }
 
-.carouselTrack::-webkit-scrollbar {
-  height: 6px;
-}
-
-.carouselTrack::-webkit-scrollbar-track {
-  background: var(--color-border-light);
-  border-radius: 9999px;
-}
-
-.carouselTrack::-webkit-scrollbar-thumb {
-  background: var(--color-border);
-  border-radius: 9999px;
-}
-
-.flowCard {
-  flex: 0 0 300px;
+.stepCard {
   background: var(--color-surface);
   border-radius: var(--radius-lg);
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--color-border-light);
   overflow: hidden;
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
   cursor: pointer;
-  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
   transition: all var(--duration-normal) var(--ease-out);
 }
 
-.flowCard:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
+.stepCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
   border-color: var(--color-accent);
 }
 
-.imageContainer {
+.imageWrapper {
   position: relative;
   width: 100%;
   background: #f8fafc;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid var(--color-border-light);
 }
 
 .imagePhone {
-  height: 380px;
+  height: 320px;
+  padding: 0.75rem;
 }
 
 .imageDesktop {
   height: 200px;
+  padding: 0.5rem;
 }
 
-.hoverZoomBadge {
+/* Zoom overlay */
+.zoomOverlay {
   position: absolute;
-  bottom: 0.75rem;
-  right: 0.75rem;
-  background: rgba(15, 23, 42, 0.75);
-  backdrop-filter: blur(4px);
-  color: #ffffff;
-  font-size: 0.75rem;
-  font-weight: 500;
-  padding: 0.25rem 0.6rem;
-  border-radius: 9999px;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.25);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   opacity: 0;
   transition: opacity 0.2s ease;
 }
 
-.flowCard:hover .hoverZoomBadge {
+.zoomBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--color-text-primary);
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-full);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.stepCard:hover .zoomOverlay {
   opacity: 1;
 }
 
-.cardContent {
+.cardInfo {
   padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
-.stepNumber {
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.05em;
+.stepPill {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--color-accent);
-  display: block;
-  margin-bottom: 0.25rem;
+  background: var(--color-accent-light);
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-full);
+  display: inline-block;
+  align-self: flex-start;
+  margin-bottom: 0.6rem;
 }
 
 .cardTitle {
   font-family: var(--font-serif);
-  font-size: 1.125rem;
+  font-size: 1.0625rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
   color: var(--color-text-primary);
+  line-height: 1.35;
 }
 
 .cardDesc {
   font-size: 0.8125rem;
   color: var(--color-text-secondary);
-  line-height: 1.5;
+  line-height: 1.55;
 }
 
-@media (max-width: 768px) {
-  .flowCard {
-    flex: 0 0 260px;
+/* Responsive Breakpoints */
+@media (max-width: 1100px) {
+  .stepsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .stepsGrid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .imagePhone {
+    height: 360px;
+  }
+
+  .imageDesktop {
+    height: 220px;
   }
 }

@@ -34,52 +34,79 @@ export default function DeviceFrame({
 
   return (
     <div className={styles.deviceShowcase}>
-      {/* Interactive Tabs */}
+      {/* Interactive Segmented Control Tabs */}
       <div className={styles.tabContainer}>
         <div className={styles.tabList}>
-          {screens.map((screen, idx) => (
-            <button
-              key={screen.id}
-              className={`${styles.tabBtn} ${idx === activeIdx ? styles.tabBtnActive : ""}`}
-              onClick={() => setActiveIdx(idx)}
-              style={{
-                borderColor: idx === activeIdx ? themeColor : "transparent",
-                color: idx === activeIdx ? "var(--color-text-primary)" : "var(--color-text-tertiary)",
-              }}
-            >
-              <span className={styles.tabDot} style={{ backgroundColor: idx === activeIdx ? themeColor : "#CBD5E1" }} />
-              {screen.title}
-            </button>
-          ))}
+          {screens.map((screen, idx) => {
+            const isActive = idx === activeIdx;
+            return (
+              <button
+                key={screen.id}
+                className={`${styles.tabBtn} ${isActive ? styles.tabBtnActive : ""}`}
+                onClick={() => setActiveIdx(idx)}
+                style={{
+                  borderColor: isActive ? themeColor : "transparent",
+                  color: isActive ? "var(--color-text-primary)" : "var(--color-text-tertiary)",
+                }}
+              >
+                <span
+                  className={styles.tabDot}
+                  style={{ backgroundColor: isActive ? themeColor : "#CBD5E1" }}
+                />
+                {screen.title}
+              </button>
+            );
+          })}
         </div>
       </div>
 
-      {/* Device Frame */}
+      {/* Showcase Display Area */}
       <div className={styles.frameWrapper}>
         {type === "phone" ? (
-          /* Phone Frame */
-          <div className={styles.phoneFrame} onClick={() => setIsLightboxOpen(true)}>
-            <div className={styles.phoneSpeaker} />
-            <div className={styles.phoneCamera} />
-            <div className={styles.phoneScreen}>
-              <div className={styles.screenImageContainer}>
-                <Image
-                  src={activeScreen.src}
-                  alt={`${projectName} - ${activeScreen.title}`}
-                  fill
-                  style={{ objectFit: "contain" }}
-                  priority
-                  sizes="(max-width: 768px) 300px, 380px"
-                />
-              </div>
+          /* Phone Showcase — Direct Clean Presentation with Floating Elevation */
+          <div
+            className={styles.phoneMockupContainer}
+            onClick={() => setIsLightboxOpen(true)}
+            title="Click to view full size"
+          >
+            <div className={styles.phoneImageWrapper}>
+              <Image
+                src={activeScreen.src}
+                alt={`${projectName} - ${activeScreen.title}`}
+                fill
+                style={{ objectFit: "contain" }}
+                priority
+                sizes="(max-width: 768px) 320px, 420px"
+              />
               <div className={styles.expandOverlay}>
-                <span>🔍 Click to Expand</span>
+                <span className={styles.expandBadge}>
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <polyline points="15 3 21 3 21 9" />
+                    <polyline points="9 21 3 21 3 15" />
+                    <line x1="21" y1="3" x2="14" y2="10" />
+                    <line x1="3" y1="21" x2="10" y2="14" />
+                  </svg>
+                  Click to Expand High-Res View
+                </span>
               </div>
             </div>
           </div>
         ) : (
           /* Desktop / Laptop Browser Frame */
-          <div className={styles.desktopFrame} onClick={() => setIsLightboxOpen(true)}>
+          <div
+            className={styles.desktopFrame}
+            onClick={() => setIsLightboxOpen(true)}
+            title="Click to view full size"
+          >
             <div className={styles.browserHeader}>
               <div className={styles.trafficLights}>
                 <span className={`${styles.dot} ${styles.dotRed}`} />
@@ -103,7 +130,24 @@ export default function DeviceFrame({
                 />
               </div>
               <div className={styles.expandOverlay}>
-                <span>🔍 Click to Expand High-Resolution View</span>
+                <span className={styles.expandBadge}>
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <polyline points="15 3 21 3 21 9" />
+                    <polyline points="9 21 3 21 3 15" />
+                    <line x1="21" y1="3" x2="14" y2="10" />
+                    <line x1="3" y1="21" x2="10" y2="14" />
+                  </svg>
+                  Click to Expand High-Res View
+                </span>
               </div>
             </div>
           </div>

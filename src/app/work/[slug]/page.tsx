@@ -44,61 +44,61 @@ export async function generateMetadata({
 // Interactive Screen Data for BusWatch
 const buswatchScreens: ScreenItem[] = [
   {
+    id: "parent-dashboard",
+    title: "Parent Home Dashboard",
+    src: "/images/projects/buswatch/routes-list.png",
+    caption: "Parent dashboard showing live real-time status of each child ('On The Bus', 'At School', 'At Home') with quick transit alerts.",
+  },
+  {
     id: "live-tracking",
     title: "Live GPS Tracking",
     src: "/images/projects/buswatch/live-tracking.png",
-    caption: "Real-time interactive route map showing driver details (Mike Johnson), calibrated 10-minute ETA, and direct bus telemetry.",
+    caption: "Real-time interactive route map showing driver details (Mike Johnson), calibrated 10-minute ETA, and live vehicle telemetry.",
   },
   {
-    id: "home-map",
-    title: "Map & Bus Overview",
-    src: "/images/projects/buswatch/home-map.png",
-    caption: "Main home screen displaying live bus locations, nearby stops, and quick access to favorite routes.",
+    id: "pickup-details",
+    title: "Driver & Pickup Details",
+    src: "/images/projects/buswatch/bus-details.png",
+    caption: "Driver verified profile, scheduled morning pickup time, home pickup location, and instant 'Notify me when 5 mins away' reminder trigger.",
   },
   {
     id: "onboarding",
     title: "Onboarding Flow",
     src: "/images/projects/buswatch/onboarding-1.png",
-    caption: "Clear, friendly onboarding explaining GPS tracking accuracy and peace of mind for parents.",
+    caption: "Warm, illustrative 3-step onboarding explaining GPS tracking accuracy and peace of mind for parents.",
   },
   {
-    id: "bus-details",
-    title: "Bus & Stop Details",
-    src: "/images/projects/buswatch/bus-details.png",
-    caption: "Comprehensive vehicle specification, seating capacity, driver contact, and scheduled stop timelines.",
-  },
-  {
-    id: "splash",
-    title: "Splash & Identity",
-    src: "/images/projects/buswatch/splash.png",
-    caption: "Signature brand identity in vibrant amber yellow with clean vehicle badge icon.",
+    id: "signup-safety",
+    title: "Safety & Medical Registration",
+    src: "/images/projects/buswatch/home-map.png",
+    caption: "Dedicated safety registration form capturing blood type, allergies, medical conditions, and dual emergency contact information.",
   },
 ];
 
 const buswatchFlowSteps: FlowStep[] = [
   {
     step: "Step 01",
-    title: "Welcome & Onboarding",
-    description: "Parents are introduced to real-time tracking, live notification triggers, and schedule safety.",
+    title: "Onboarding & Trust Building",
+    description: "Parents are introduced to real-time tracking, safety notifications, and predictable schedule updates.",
     src: "/images/projects/buswatch/onboarding-1.png",
   },
   {
     step: "Step 02",
-    title: "Live Route Telemetry",
+    title: "Parent Home Dashboard",
+    description: "Glanceable overview of all children with live status tags ('On the Bus', 'At School', 'At Home').",
+    src: "/images/projects/buswatch/routes-list.png",
+  },
+  {
+    step: "Step 03",
+    title: "Live Route & Driver Telemetry",
     description: "Map view with GPS pin, live traffic route line, ETA countdown, and verified driver credentials.",
     src: "/images/projects/buswatch/live-tracking.png",
   },
   {
-    step: "Step 03",
-    title: "Stop & Passenger Verification",
-    description: "Detailed breakdown of upcoming stops with scheduled arrival times and boarding verification.",
-    src: "/images/projects/buswatch/bus-details.png",
-  },
-  {
     step: "Step 04",
-    title: "Alerts & Notifications",
-    description: "Instant push notifications when the bus is approaching the pickup radius or facing traffic delays.",
-    src: "/images/projects/buswatch/notifications.png",
+    title: "Driver Contact & Stop Reminders",
+    description: "Direct contact line with bus driver and automated alerts 5 minutes prior to bus arrival.",
+    src: "/images/projects/buswatch/bus-details.png",
   },
 ];
 
@@ -286,7 +286,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
           </div>
         </ScrollReveal>
 
-        {/* Apple-Style User Flow Gallery */}
+        {/* Apple-Style User Flow Responsive Grid */}
         <ScrollReveal>
           <FlowGallery
             steps={flowSteps}
