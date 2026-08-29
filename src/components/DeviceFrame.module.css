@@ -61,11 +61,11 @@
 
 .tabBtn:hover {
   color: var(--color-text-primary);
-  background-color: var(--color-border-light);
+  background-color: rgba(168, 85, 247, 0.14);
 }
 
 .tabBtnActive {
-  background-color: var(--color-surface);
+  background-color: var(--color-surface-elevated);
   box-shadow: var(--shadow-sm);
 }
 
@@ -93,15 +93,16 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
   transition: all 0.2s ease;
   z-index: 10;
 }
 
 .tabArrow:hover {
-  background: #f8fafc;
+  background: #221C38;
   transform: translateY(-50%) scale(1.1);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 6px 16px rgba(168, 85, 247, 0.25);
+  border-color: var(--color-accent);
 }
 
 .tabArrowLeft {
@@ -129,13 +130,13 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.18));
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.7)) drop-shadow(0 0 25px rgba(168, 85, 247, 0.15));
   transition: transform var(--duration-normal) var(--ease-out), filter var(--duration-normal) var(--ease-out);
 }
 
 .phoneMockupContainer:hover {
   transform: translateY(-6px);
-  filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.25));
+  filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.85)) drop-shadow(0 0 35px rgba(168, 85, 247, 0.3));
 }
 
 .phoneImageWrapper {
@@ -151,25 +152,26 @@
   position: relative;
   width: 100%;
   max-width: 1100px;
-  background: #ffffff;
+  background: #171326;
   border-radius: 16px;
   overflow: hidden;
   border: 1px solid var(--color-border);
-  box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.7), 0 0 35px rgba(168, 85, 247, 0.12);
   cursor: pointer;
   transition: transform var(--duration-normal) var(--ease-out), box-shadow var(--duration-normal) var(--ease-out);
 }
 
 .desktopFrame:hover {
   transform: translateY(-6px);
-  box-shadow: 0 30px 70px -15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 30px 70px -15px rgba(0, 0, 0, 0.85), 0 0 45px rgba(168, 85, 247, 0.22);
+  border-color: var(--color-border-hover);
 }
 
 .browserHeader {
   display: flex;
   align-items: center;
   padding: 0.75rem 1.25rem;
-  background: #f8fafc;
+  background: #120E1E;
   border-bottom: 1px solid var(--color-border);
   gap: 1.5rem;
 }
@@ -204,7 +206,7 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.35rem 0.75rem;
-  background: #ffffff;
+  background: #1B162C;
   border: 1px solid var(--color-border);
   border-radius: 6px;
   font-size: 0.75rem;
@@ -224,7 +226,7 @@
   position: relative;
   width: 100%;
   aspect-ratio: 16 / 10;
-  background: #f8fafc;
+  background: #0A0712;
   overflow: hidden;
 }
 
@@ -238,9 +240,9 @@
 .expandOverlay {
   position: absolute;
   inset: 0;
-  background: rgba(15, 23, 42, 0.35);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+  background: rgba(6, 4, 12, 0.6);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -253,13 +255,14 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(255, 255, 255, 0.95);
-  color: var(--color-text-primary);
+  background: rgba(23, 19, 38, 0.95);
+  color: #F6F3FF;
   font-size: 0.8125rem;
   font-weight: 500;
   padding: 0.5rem 1rem;
   border-radius: var(--radius-full);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6), 0 0 20px rgba(168, 85, 247, 0.25);
 }
 
 .phoneMockupContainer:hover .expandOverlay,

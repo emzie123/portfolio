@@ -23,7 +23,7 @@ export default function DeviceFrame({
   type,
   screens,
   projectName,
-  themeColor = "#2563EB",
+  themeColor = "#A855F7",
 }: DeviceFrameProps) {
   const [activeIdx, setActiveIdx] = useState(0);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
@@ -146,7 +146,7 @@ export default function DeviceFrame({
               >
                 <span
                   className={styles.tabDot}
-                  style={{ backgroundColor: isActive ? themeColor : "#CBD5E1" }}
+                  style={{ backgroundColor: isActive ? themeColor : "rgba(168, 85, 247, 0.3)" }}
                 />
                 {screen.title}
               </button>

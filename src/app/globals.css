@@ -3,36 +3,36 @@
    Minimalist, Elegant, Typography-Driven, Frosted Glass & Ambient Depth
    ========================================================================== */
 
-/* --- CSS Custom Properties (Cupertino Palette & System Tokens) --- */
+/* --- CSS Custom Properties (Black & Purple Modern Luxury System Tokens) --- */
 :root {
-  /* Colors */
-  --color-bg: #FBFBFD;
-  --color-bg-subtle: #F5F5F7;
-  --color-surface: #FFFFFF;
-  --color-surface-glass: rgba(255, 255, 255, 0.72);
-  --color-surface-elevated: #FFFFFF;
+  /* Colors - Deep Obsidian Black & Violet Surfaces */
+  --color-bg: #0A0712;
+  --color-bg-subtle: #120E1E;
+  --color-surface: #171326;
+  --color-surface-glass: rgba(23, 19, 38, 0.75);
+  --color-surface-elevated: #221C38;
 
-  /* Typography Colors */
-  --color-text-primary: #1D1D1F;
-  --color-text-secondary: #6E6E73;
-  --color-text-tertiary: #86868B;
-  --color-text-quaternary: #A1A1A6;
+  /* Typography Colors - Crisp Lilac & Violet Mists */
+  --color-text-primary: #F6F3FF;
+  --color-text-secondary: #ABA1C6;
+  --color-text-tertiary: #7C719A;
+  --color-text-quaternary: #564C70;
 
-  /* Accent & Interactive (Cupertino Blue + Warm Jewels) */
-  --color-accent: #0071E3;
-  --color-accent-hover: #0077ED;
-  --color-accent-light: #F0F6FF;
+  /* Accent & Interactive (Vibrant Electric Royal Purple) */
+  --color-accent: #A855F7;
+  --color-accent-hover: #C084FC;
+  --color-accent-light: rgba(168, 85, 247, 0.16);
   --color-accent-amber: #F59E0B;
-  --color-accent-emerald: #0F3830;
+  --color-accent-emerald: #10B981;
 
   /* Borders & Dividers */
-  --color-border: rgba(0, 0, 0, 0.08);
-  --color-border-light: rgba(0, 0, 0, 0.04);
-  --color-border-hover: rgba(0, 0, 0, 0.16);
+  --color-border: rgba(168, 85, 247, 0.18);
+  --color-border-light: rgba(255, 255, 255, 0.06);
+  --color-border-hover: rgba(168, 85, 247, 0.4);
 
   /* Overlays */
-  --color-overlay: rgba(0, 0, 0, 0.45);
-  --color-backdrop-blur: saturate(180%) blur(20px);
+  --color-overlay: rgba(6, 4, 12, 0.8);
+  --color-backdrop-blur: saturate(190%) blur(20px);
 
   /* Typography */
   --font-sans: var(--font-inter), -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", sans-serif;
@@ -91,13 +91,13 @@
   --radius-2xl: 40px;
   --radius-full: 9999px;
 
-  /* Apple Ambient Shadows */
-  --shadow-subtle: 0 2px 8px rgba(0, 0, 0, 0.04);
-  --shadow-sm: 0 2px 12px rgba(0, 0, 0, 0.06);
-  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.08);
-  --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.1);
-  --shadow-xl: 0 30px 70px rgba(0, 0, 0, 0.12);
-  --shadow-floating: 0 25px 60px -15px rgba(0, 0, 0, 0.16);
+  /* Black & Purple Ambient Shadows */
+  --shadow-subtle: 0 2px 8px rgba(0, 0, 0, 0.5);
+  --shadow-sm: 0 2px 14px rgba(0, 0, 0, 0.6);
+  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.7), 0 0 20px rgba(168, 85, 247, 0.08);
+  --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 35px rgba(168, 85, 247, 0.12);
+  --shadow-xl: 0 30px 70px rgba(0, 0, 0, 0.9), 0 0 50px rgba(168, 85, 247, 0.18);
+  --shadow-floating: 0 25px 60px -15px rgba(0, 0, 0, 0.85), 0 0 30px rgba(168, 85, 247, 0.2);
 
   /* Transitions */
   --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
@@ -214,7 +214,7 @@ p {
   border-width: 0;
 }
 
-/* --- Apple-Standard Buttons & Pills --- */
+/* --- Buttons & Interactive Pills --- */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -237,37 +237,38 @@ p {
 }
 
 .btn--primary {
-  background-color: var(--color-text-primary);
+  background: linear-gradient(135deg, #A855F7 0%, #7E22CE 100%);
   color: #FFFFFF;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 18px rgba(168, 85, 247, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .btn--primary:hover {
-  background-color: #000000;
+  background: linear-gradient(135deg, #C084FC 0%, #9333EA 100%);
   transform: translateY(-1px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
+  box-shadow: 0 8px 26px rgba(168, 85, 247, 0.5);
 }
 
 .btn--blue {
-  background-color: var(--color-accent);
+  background: linear-gradient(135deg, #A855F7 0%, #7E22CE 100%);
   color: #FFFFFF;
-  box-shadow: 0 4px 14px rgba(0, 113, 227, 0.3);
+  box-shadow: 0 4px 18px rgba(168, 85, 247, 0.35);
 }
 
 .btn--blue:hover {
-  background-color: var(--color-accent-hover);
+  background: linear-gradient(135deg, #C084FC 0%, #9333EA 100%);
   transform: translateY(-1px);
-  box-shadow: 0 8px 24px rgba(0, 113, 227, 0.4);
+  box-shadow: 0 8px 26px rgba(168, 85, 247, 0.5);
 }
 
 .btn--outline {
-  background-color: transparent;
+  background-color: rgba(23, 19, 38, 0.6);
   color: var(--color-text-primary);
   border: 1px solid var(--color-border);
 }
 
 .btn--outline:hover {
-  background-color: rgba(0, 0, 0, 0.04);
+  background-color: rgba(168, 85, 247, 0.14);
   border-color: var(--color-border-hover);
   transform: translateY(-1px);
 }
@@ -281,7 +282,8 @@ p {
 }
 
 .btn--ghost:hover {
-  opacity: 0.8;
+  color: var(--color-accent-hover);
+  opacity: 0.9;
 }
 
 /* --- Section Headers --- */
@@ -314,23 +316,32 @@ p {
   line-height: var(--leading-relaxed);
 }
 
-/* --- Cupertino Tags & Badges --- */
+/* --- Tags & Badges --- */
 .tag {
   display: inline-flex;
   align-items: center;
-  padding: 0.25rem 0.65rem;
+  padding: 0.3rem 0.75rem;
   font-size: 0.75rem;
   font-weight: 500;
   color: var(--color-text-secondary);
-  background-color: var(--color-bg-subtle);
-  border: 1px solid var(--color-border-light);
+  background-color: rgba(168, 85, 247, 0.1);
+  border: 1px solid rgba(168, 85, 247, 0.18);
   border-radius: var(--radius-full);
   transition: all var(--duration-fast) var(--ease-out);
+  cursor: pointer;
 }
 
 .tag:hover {
-  background-color: rgba(0, 0, 0, 0.06);
+  background-color: rgba(168, 85, 247, 0.2);
   color: var(--color-text-primary);
+  border-color: rgba(168, 85, 247, 0.35);
+}
+
+.tag--active {
+  background: var(--color-accent) !important;
+  color: #FFFFFF !important;
+  border-color: var(--color-accent) !important;
+  box-shadow: 0 0 16px rgba(168, 85, 247, 0.4);
 }
 
 /* --- GSAP Initial Animation Classes --- */

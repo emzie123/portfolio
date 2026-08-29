@@ -70,7 +70,7 @@ export default function TiltCard({
       <div
         className={styles.glare}
         style={{
-          background: `radial-gradient(circle at ${glarePosition.x}% ${glarePosition.y}%, rgba(255, 255, 255, ${glarePosition.opacity}), transparent 60%)`,
+          background: `radial-gradient(circle at ${glarePosition.x}% ${glarePosition.y}%, rgba(216, 180, 254, ${glarePosition.opacity}), transparent 60%)`,
         }}
       />
     </div>
