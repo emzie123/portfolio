@@ -22,7 +22,7 @@ export default async function HomePage() {
     featuredProjects = allProjects
       .filter((p) => p.entry.featured)
       .sort((a, b) => (a.entry.sortOrder ?? 0) - (b.entry.sortOrder ?? 0))
-      .slice(0, 2)
+      .slice(0, 3)
       .map((p) => ({
         slug: p.slug,
         title: p.entry.title,
@@ -126,11 +126,7 @@ export default async function HomePage() {
                     summary={project.summary}
                     category={project.category}
                     year={project.year}
-                    coverImage={
-                      project.slug === "buswatch"
-                        ? "/images/projects/buswatch/live-tracking.png"
-                        : "/images/projects/verae/orders-ledger.png"
-                    }
+                    coverImage={project.coverImage || undefined}
                   />
                 </ScrollReveal>
               ))}

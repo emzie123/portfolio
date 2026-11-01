@@ -23,6 +23,7 @@ export default config({
             { label: "Web Design", value: "Web Design" },
             { label: "Mobile Design", value: "Mobile Design" },
             { label: "UI Mockup", value: "UI Mockup" },
+            { label: "Logo Design", value: "Logo Design" },
           ],
           defaultValue: "Web Design",
         }),

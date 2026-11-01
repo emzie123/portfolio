@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { reader } from "@/lib/reader";
@@ -279,13 +280,14 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
 
   // Screen selection based on slug
   const isBusWatch = slug === "buswatch";
+  const isBerryGuard = slug === "berryguard";
   const screens = isBusWatch ? buswatchScreens : veraeScreens;
   const flowSteps = isBusWatch ? buswatchFlowSteps : veraeFlowSteps;
   const additionalGallery = isBusWatch
     ? buswatchAdditionalGallery
     : veraeAdditionalGallery;
   const deviceType = isBusWatch ? "phone" : "desktop";
-  const themeColor = isBusWatch ? "#F59E0B" : "#0F3830";
+  const themeColor = isBusWatch ? "#F59E0B" : isBerryGuard ? "#C0392B" : "#0F3830";
 
   return (
     <article id={`case-study-${slug}`}>
@@ -312,15 +314,35 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
       </section>
 
       <div className="container">
+        {/* Logo Showcase for BerryGuard */}
+        {isBerryGuard && (
+          <ScrollReveal direction="scale">
+            <div className={styles.logoShowcase}>
+              <div className={styles.logoImageWrapper}>
+                <Image
+                  src="/images/projects/berryguard/logo.png"
+                  alt="BerryGuard Logo"
+                  width={480}
+                  height={480}
+                  style={{ objectFit: "contain" }}
+                  priority
+                />
+              </div>
+            </div>
+          </ScrollReveal>
+        )}
+
         {/* Interactive Device Showcase with Clean Single-Screen Tabs */}
-        <ScrollReveal direction="scale">
-          <DeviceFrame
-            type={deviceType}
-            screens={screens}
-            projectName={project.title}
-            themeColor={themeColor}
-          />
-        </ScrollReveal>
+        {!isBerryGuard && (
+          <ScrollReveal direction="scale">
+            <DeviceFrame
+              type={deviceType}
+              screens={screens}
+              projectName={project.title}
+              themeColor={themeColor}
+            />
+          </ScrollReveal>
+        )}
 
         {/* Info Bar */}
         <ScrollReveal>
@@ -378,24 +400,28 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
         </ScrollReveal>
 
         {/* Primary Experience Architecture Flow (4-Card Responsive Grid) */}
-        <ScrollReveal>
-          <FlowGallery
-            steps={flowSteps}
-            title={`${project.title} — Experience Architecture & User Journey`}
-            subtitle="Step-by-step design breakdown illustrating key user touchpoints and interface decisions."
-            aspectRatio={isBusWatch ? "phone" : "desktop"}
-          />
-        </ScrollReveal>
+        {!isBerryGuard && (
+          <ScrollReveal>
+            <FlowGallery
+              steps={flowSteps}
+              title={`${project.title} — Experience Architecture & User Journey`}
+              subtitle="Step-by-step design breakdown illustrating key user touchpoints and interface decisions."
+              aspectRatio={isBusWatch ? "phone" : "desktop"}
+            />
+          </ScrollReveal>
+        )}
 
         {/* Additional Screens & UI Kit Catalog (4-Card Responsive Grid) */}
-        <ScrollReveal>
-          <FlowGallery
-            steps={additionalGallery}
-            title={`${project.title} — Extended Design Modules & UI Catalog`}
-            subtitle="Additional interface screens, modals, and management systems designed for this platform."
-            aspectRatio={isBusWatch ? "phone" : "desktop"}
-          />
-        </ScrollReveal>
+        {!isBerryGuard && (
+          <ScrollReveal>
+            <FlowGallery
+              steps={additionalGallery}
+              title={`${project.title} — Extended Design Modules & UI Catalog`}
+              subtitle="Additional interface screens, modals, and management systems designed for this platform."
+              aspectRatio={isBusWatch ? "phone" : "desktop"}
+            />
+          </ScrollReveal>
+        )}
 
         {/* Navigation */}
         <nav className={styles.caseNav}>
