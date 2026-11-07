@@ -137,6 +137,24 @@ const buswatchScreens: ScreenItem[] = [
     src: "/images/projects/buswatch/student-medical.png",
     caption: "Comprehensive medical and emergency safety ledger detailing blood type (A+), insurance policy, primary physician contacts, allergen warnings, medications, and dietary restrictions.",
   },
+  {
+    id: "student-emergency",
+    title: "Student Details (Emergency Contacts)",
+    src: "/images/projects/buswatch/student-emergency.png",
+    caption: "Authorized emergency pickup records detailing primary guardian (Robert Wilson), secondary guardian (Sarah Wilson), and tertiary contact (Linda Martinez) with direct contact channels.",
+  },
+  {
+    id: "notifications",
+    title: "Notifications & Proximity Alerts",
+    src: "/images/projects/buswatch/notifications.png",
+    caption: "Dedicated transit notification center tracking 5-minute arrival proximity alerts, real-time route detours, student safe-boarding verifications, and account approvals.",
+  },
+  {
+    id: "settings",
+    title: "Settings & Notification Preferences",
+    src: "/images/projects/buswatch/settings.png",
+    caption: "Customizable alert preferences with toggle controls for bus departure, arrival, boarding, route delays, preferred language selection, and account security controls.",
+  },
 ];
 
 const buswatchFlowSteps: FlowStep[] = [
@@ -190,6 +208,27 @@ const buswatchDossierGallery: FlowStep[] = [
     title: "Medical Profile & Emergency Safety",
     description: "Critical safety ledger containing blood type, medical insurance policy, primary physician contacts, allergies, and emergency medications.",
     src: "/images/projects/buswatch/student-medical.png",
+  },
+];
+
+const buswatchSettingsGallery: FlowStep[] = [
+  {
+    step: "Step 01",
+    title: "Authorized Emergency Contacts",
+    description: "Tiered emergency contact ledger identifying authorized pickup guardians (Father, Mother, Grandmother) with verified direct phone lines.",
+    src: "/images/projects/buswatch/student-emergency.png",
+  },
+  {
+    step: "Step 02",
+    title: "Notifications & Proximity Alerts",
+    description: "Real-time event feed alerting parents when the bus is 5 minutes away, route change warnings, and verified student boarding check-ins.",
+    src: "/images/projects/buswatch/notifications.png",
+  },
+  {
+    step: "Step 03",
+    title: "Dispatch Preferences & Security",
+    description: "Fine-grained push alert switches for bus departures, arrivals, child boarding, route delays, and account credential security.",
+    src: "/images/projects/buswatch/settings.png",
   },
 ];
 
@@ -488,13 +527,25 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
           </ScrollReveal>
         )}
 
-        {/* Vehicle & Student Dossiers Gallery (Last Part) */}
+        {/* Vehicle & Student Dossiers Gallery */}
         {isBusWatch && (
           <ScrollReveal>
             <FlowGallery
               steps={buswatchDossierGallery}
               title="BusWatch — Fleet Telemetry & Student Safety Dossiers"
               subtitle="Comprehensive operational screens covering bus fleet telemetry, driver verification, guardian contacts, and student medical profiles."
+              aspectRatio="phone"
+            />
+          </ScrollReveal>
+        )}
+
+        {/* Emergency Contacts, Alerts & Safety Settings Gallery (Very Last Part) */}
+        {isBusWatch && (
+          <ScrollReveal>
+            <FlowGallery
+              steps={buswatchSettingsGallery}
+              title="BusWatch — Emergency Contacts, Alerts & Safety Settings"
+              subtitle="Critical dispatch notifications, authorized pickup guardian channels, and fine-grained transit alert preferences."
               aspectRatio="phone"
             />
           </ScrollReveal>

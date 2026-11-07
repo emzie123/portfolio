@@ -47,10 +47,11 @@
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  border: 1px solid var(--color-border);
-  background: #f8fafc;
-  color: var(--color-text-secondary);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: #ffffff;
+  color: #0f172a;
   font-size: 1rem;
+  font-weight: 700;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -59,8 +60,9 @@
 }
 
 .closeBtn:hover {
-  background: #e2e8f0;
-  color: var(--color-text-primary);
+  background: #f1f5f9;
+  color: #000000;
+  transform: scale(1.05);
 }
 
 .header {
@@ -111,19 +113,20 @@
 
 /* Email Card */
 .emailCard {
-  background: #f8fafc;
-  border: 1px solid var(--color-border);
+  background: #ffffff;
+  border: 1px solid rgba(168, 85, 247, 0.25);
   border-radius: var(--radius-lg);
-  padding: 1rem 1.25rem;
+  padding: 1.1rem 1.25rem;
   margin-bottom: 1.5rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
 .emailLabel {
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--color-text-tertiary);
+  letter-spacing: 0.06em;
+  color: #475569;
   margin-bottom: 0.4rem;
 }
 
@@ -135,10 +138,11 @@
 }
 
 .emailText {
-  font-family: monospace;
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--color-text-primary);
+  font-family: var(--font-sans), monospace;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0f172a;
+  letter-spacing: -0.01em;
   word-break: break-all;
 }
 
@@ -146,12 +150,12 @@
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  color: var(--color-text-primary);
+  background: #0f172a;
+  border: 1px solid #1e293b;
+  color: #ffffff;
   font-size: 0.8125rem;
   font-weight: 600;
-  padding: 0.45rem 0.85rem;
+  padding: 0.5rem 0.95rem;
   border-radius: var(--radius-md);
   cursor: pointer;
   transition: all 0.2s ease;
@@ -160,13 +164,15 @@
 }
 
 .copyBtn:hover {
-  background: #f1f5f9;
-  border-color: #cbd5e1;
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: #ffffff;
+  transform: translateY(-1px);
 }
 
 .copyBtn.copied {
-  background: #22c55e;
-  border-color: #22c55e;
+  background: #16a34a;
+  border-color: #16a34a;
   color: #ffffff;
 }
 
