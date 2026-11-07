@@ -71,6 +71,30 @@ const buswatchScreens: ScreenItem[] = [
     src: "/images/projects/buswatch/signin.png",
     caption: "Secure authentication interface for parents and guardians to access real-time student transit data.",
   },
+  {
+    id: "register-parent",
+    title: "Registration: Parent Info",
+    src: "/images/projects/buswatch/register-parent.png",
+    caption: "Step 1 of family registration capturing verified parent name, contact phone, credentials, and language preference.",
+  },
+  {
+    id: "register-child",
+    title: "Registration: Child Info",
+    src: "/images/projects/buswatch/register-child.png",
+    caption: "Step 2 student enrollment capturing student photo, class grade, school name, and official school enrollment form.",
+  },
+  {
+    id: "register-medical",
+    title: "Registration: Medical Form",
+    src: "/images/projects/buswatch/register-medical.png",
+    caption: "Step 3 safety profile detailing blood type, allergies, medications, and dual emergency contacts for transit emergencies.",
+  },
+  {
+    id: "location-permission",
+    title: "Location Permission",
+    src: "/images/projects/buswatch/location-permission.png",
+    caption: "System geolocation authorization dialogue enabling precise proximity alerts when the school bus is approaching.",
+  },
 ];
 
 const buswatchFlowSteps: FlowStep[] = [
@@ -100,7 +124,32 @@ const buswatchFlowSteps: FlowStep[] = [
   },
 ];
 
-const buswatchAdditionalGallery: FlowStep[] = [];
+const buswatchAdditionalGallery: FlowStep[] = [
+  {
+    step: "Step 01",
+    title: "Parent Account Creation",
+    description: "Guardian registration capturing verified contact details, language preferences, and secure credentials.",
+    src: "/images/projects/buswatch/register-parent.png",
+  },
+  {
+    step: "Step 02",
+    title: "Student Enrollment",
+    description: "Detailed student profile with photo capture, school name, class grade, and official enrollment forms.",
+    src: "/images/projects/buswatch/register-child.png",
+  },
+  {
+    step: "Step 03",
+    title: "Medical & Safety Profile",
+    description: "Critical emergency triage capturing blood type, active allergies, medications, and emergency contacts.",
+    src: "/images/projects/buswatch/register-medical.png",
+  },
+  {
+    step: "Step 04",
+    title: "Geolocation Permission",
+    description: "System location access dialog enabling automatic proximity tracking when the bus approaches.",
+    src: "/images/projects/buswatch/location-permission.png",
+  },
+];
 
 // -------------------------------------------------------------
 // VERAE DATA (Luxury E-Commerce Dashboard)
