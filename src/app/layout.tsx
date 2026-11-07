@@ -17,6 +17,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://portfolio-emi.vercel.app"),
   title: {
     default: "Emilita D. Cristobal — UI/UX Designer",
     template: "%s | Emilita D. Cristobal",
@@ -36,6 +37,7 @@ export const metadata: Metadata = {
     title: "Emilita D. Cristobal — UI/UX Designer",
     description:
       "Crafting thoughtful, elegant digital experiences across web, mobile, and product design.",
+    url: "https://portfolio-emi.vercel.app",
     type: "website",
     locale: "en_US",
   },
