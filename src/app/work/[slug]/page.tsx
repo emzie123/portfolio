@@ -7,6 +7,7 @@ import ScrollReveal from "@/components/ScrollReveal";
 import MarkdocRenderer from "@/components/MarkdocRenderer";
 import DeviceFrame, { type ScreenItem } from "@/components/DeviceFrame";
 import FlowGallery, { type FlowStep } from "@/components/FlowGallery";
+import BerryGuardShowcase from "@/components/BerryGuardShowcase";
 import styles from "./caseStudy.module.css";
 
 interface CaseStudyPageProps {
@@ -314,21 +315,10 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
       </section>
 
       <div className="container">
-        {/* Logo Showcase for BerryGuard */}
+        {/* Showcase for BerryGuard */}
         {isBerryGuard && (
           <ScrollReveal direction="scale">
-            <div className={styles.logoShowcase}>
-              <div className={styles.logoImageWrapper}>
-                <Image
-                  src="/images/projects/berryguard/logo.png"
-                  alt="BerryGuard Logo"
-                  width={480}
-                  height={480}
-                  style={{ objectFit: "contain" }}
-                  priority
-                />
-              </div>
-            </div>
+            <BerryGuardShowcase themeColor={themeColor} />
           </ScrollReveal>
         )}
 
