@@ -54,120 +54,53 @@ const buswatchScreens: ScreenItem[] = [
     caption: "Official BusWatch brand launch screen featuring the signature school bus yellow identity, navigation pin, and wireless signal indicator.",
   },
   {
-    id: "parent-dashboard",
-    title: "Parent Home Dashboard",
-    src: "/images/projects/buswatch/routes-list.png",
-    caption: "Parent home dashboard tracking real-time status of each child ('On The Bus', 'At School', 'At Home') with glanceable route alert cards.",
-  },
-  {
-    id: "live-tracking",
-    title: "Live GPS & Route Telemetry",
-    src: "/images/projects/buswatch/live-tracking.png",
-    caption: "Real-time interactive route map showing driver details (Mike Johnson), calibrated 10-minute ETA, and live vehicle navigation path.",
-  },
-  {
-    id: "driver-pickup",
-    title: "Driver & Pickup Reminder",
-    src: "/images/projects/buswatch/bus-details.png",
-    caption: "Driver verified profile, scheduled morning pickup time, home pickup location, and instant 'Notify me when 5 mins away' reminder trigger.",
-  },
-  {
-    id: "onboarding-1",
-    title: "Onboarding: GPS Tracking",
+    id: "onboarding-tracking",
+    title: "Live GPS & Tracking",
     src: "/images/projects/buswatch/onboarding-1.png",
     caption: "First onboarding step educating parents on accurate live GPS route updates and arrival predictability.",
   },
   {
+    id: "onboarding-security",
+    title: "Secure & Private",
+    src: "/images/projects/buswatch/onboarding-2.png",
+    caption: "Security and data protection overview ensuring student location and personal details remain confidential.",
+  },
+  {
     id: "sign-in",
     title: "Parent Account Sign In",
-    src: "/images/projects/buswatch/onboarding-3.png",
-    caption: "Secure parent authentication screen for accessing student routes and bus telemetry.",
-  },
-  {
-    id: "safety-registration",
-    title: "Safety & Emergency Form",
-    src: "/images/projects/buswatch/home-map.png",
-    caption: "Dedicated safety registration form capturing blood type, allergies, medical conditions, and dual emergency contact information.",
-  },
-  {
-    id: "bus-info",
-    title: "Bus & Driver Info",
-    src: "/images/projects/buswatch/bus-info.png",
-    caption: "Bus details screen showing active status, seat availability (12 seats), capacity (40 students), and verified driver credentials.",
-  },
-  {
-    id: "parent-details",
-    title: "Parent Details & Children",
-    src: "/images/projects/buswatch/parent-details.png",
-    caption: "Parent profile details displaying registered children (Justin & Kylie Wilson: 'AT HOME') and emergency contact numbers.",
-  },
-  {
-    id: "student-general",
-    title: "Student Details: General",
-    src: "/images/projects/buswatch/student-details.png",
-    caption: "Student general information capturing school enrollment (The Immaculate Mother Academy), residential address, and parent behavioral notes.",
-  },
-  {
-    id: "student-medical",
-    title: "Student Details: Medical",
-    src: "/images/projects/buswatch/student-medical.png",
-    caption: "Comprehensive medical and allergy profile tracking Blood Type A+, health insurance, primary physician, dietary restrictions, and emergency inhaler/EpiPen instructions.",
+    src: "/images/projects/buswatch/signin.png",
+    caption: "Secure authentication interface for parents and guardians to access real-time student transit data.",
   },
 ];
 
 const buswatchFlowSteps: FlowStep[] = [
   {
     step: "Step 01",
-    title: "Onboarding & Trust Building",
-    description: "Illustrative 3-step walkthrough introducing parents to real-time telemetry, automated reminders, and schedule safety.",
-    src: "/images/projects/buswatch/onboarding-1.png",
+    title: "Brand Launch & Identity",
+    description: "Signature warm amber splash screen introducing the BusWatch connected transit brand mark.",
+    src: "/images/projects/buswatch/splash.png",
   },
   {
     step: "Step 02",
-    title: "Parent Home Dashboard",
-    description: "Glanceable overview of all children with live status tags ('On the Bus', 'At School', 'At Home').",
-    src: "/images/projects/buswatch/routes-list.png",
+    title: "Real-time GPS Tracking",
+    description: "Clear introductory onboarding educating parents on real-time arrival predictability and route safety.",
+    src: "/images/projects/buswatch/onboarding-1.png",
   },
   {
     step: "Step 03",
-    title: "Live Route & Driver Telemetry",
-    description: "Map view with GPS pin, live traffic route line, ETA countdown, and verified driver credentials.",
-    src: "/images/projects/buswatch/live-tracking.png",
+    title: "Security & Data Governance",
+    description: "Reassurance interface reinforcing rigorous child data privacy and encryption protections.",
+    src: "/images/projects/buswatch/onboarding-2.png",
   },
   {
     step: "Step 04",
-    title: "Driver Contact & Reminders",
-    description: "Direct contact line with bus driver and automated alerts 5 minutes prior to bus arrival.",
-    src: "/images/projects/buswatch/bus-details.png",
+    title: "Parent Sign In & Access",
+    description: "Streamlined single-screen credential entry allowing immediate access to family tracking.",
+    src: "/images/projects/buswatch/signin.png",
   },
 ];
 
-const buswatchAdditionalGallery: FlowStep[] = [
-  {
-    step: "UI Screen",
-    title: "Notifications & Alert Feed",
-    description: "Comprehensive log of transit alerts, boarding timestamps, and school announcements.",
-    src: "/images/projects/buswatch/notifications.png",
-  },
-  {
-    step: "UI Screen",
-    title: "Route Timetable & Schedule",
-    description: "Detailed daily schedule with morning and afternoon pickup/drop-off time windows.",
-    src: "/images/projects/buswatch/schedule.png",
-  },
-  {
-    step: "UI Screen",
-    title: "Stop Details & Route Stops",
-    description: "Inspection view of individual stops along the bus route with estimated stop times.",
-    src: "/images/projects/buswatch/stop-details.png",
-  },
-  {
-    step: "UI Screen",
-    title: "Parent Profile & Settings",
-    description: "Account settings, student management, linked emergency contacts, and notifications.",
-    src: "/images/projects/buswatch/profile-screen.png",
-  },
-];
+const buswatchAdditionalGallery: FlowStep[] = [];
 
 // -------------------------------------------------------------
 // VERAE DATA (Luxury E-Commerce Dashboard)
@@ -426,7 +359,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
         )}
 
         {/* Additional Screens & UI Kit Catalog (4-Card Responsive Grid) */}
-        {!isBerryGuard && (
+        {!isBerryGuard && additionalGallery.length > 0 && (
           <ScrollReveal>
             <FlowGallery
               steps={additionalGallery}

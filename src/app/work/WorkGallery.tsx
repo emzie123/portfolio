@@ -52,7 +52,7 @@ export default function WorkGallery({ projects }: { projects: Project[] }) {
                 coverImage={
                   project.coverImage ||
                   (project.slug === "buswatch"
-                    ? "/images/projects/buswatch/live-tracking.png"
+                    ? "/images/projects/buswatch/splash.png"
                     : "/images/projects/verae/orders.png")
                 }
               />

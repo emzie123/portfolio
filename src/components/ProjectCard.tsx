@@ -22,7 +22,7 @@ export default function ProjectCard({
 }: ProjectCardProps) {
   const fallbackImage =
     slug === "buswatch"
-      ? "/images/projects/buswatch/live-tracking.png"
+      ? "/images/projects/buswatch/splash.png"
       : slug === "berryguard"
         ? "/images/projects/berryguard/logo.png"
         : "/images/projects/verae/orders-ledger.png";
