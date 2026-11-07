@@ -95,6 +95,24 @@ const buswatchScreens: ScreenItem[] = [
     src: "/images/projects/buswatch/location-permission.png",
     caption: "System geolocation authorization dialogue enabling precise proximity alerts when the school bus is approaching.",
   },
+  {
+    id: "parent-dashboard",
+    title: "Parent Home Dashboard",
+    src: "/images/projects/buswatch/parent-dashboard.png",
+    caption: "Parent dashboard showing real-time status of each child (Justin: 'AT HOME', Kylie: 'ON THE BUS', 'AT SCHOOL') with glanceable route alerts.",
+  },
+  {
+    id: "live-tracking",
+    title: "Live GPS & Route Telemetry",
+    src: "/images/projects/buswatch/live-tracking.png",
+    caption: "Interactive real-time map displaying calibrated 10-minute ETA, vehicle navigation path, and verified driver credentials.",
+  },
+  {
+    id: "driver-pickup",
+    title: "Driver Profile & Pickup Alert",
+    src: "/images/projects/buswatch/driver-pickup.png",
+    caption: "Driver verified profile (Mike Johnson), scheduled morning pickup location, and instant 'Notify me when 5 mins away' alert trigger.",
+  },
 ];
 
 const buswatchFlowSteps: FlowStep[] = [
@@ -106,48 +124,48 @@ const buswatchFlowSteps: FlowStep[] = [
   },
   {
     step: "Step 02",
-    title: "Real-time GPS Tracking",
+    title: "Onboarding & Predictability",
     description: "Clear introductory onboarding educating parents on real-time arrival predictability and route safety.",
     src: "/images/projects/buswatch/onboarding-1.png",
   },
   {
     step: "Step 03",
-    title: "Security & Data Governance",
-    description: "Reassurance interface reinforcing rigorous child data privacy and encryption protections.",
-    src: "/images/projects/buswatch/onboarding-2.png",
+    title: "Parent Home Dashboard",
+    description: "Glanceable overview of all children with live status tags ('At Home', 'On the Bus', 'At School').",
+    src: "/images/projects/buswatch/parent-dashboard.png",
   },
   {
     step: "Step 04",
-    title: "Parent Sign In & Access",
-    description: "Streamlined single-screen credential entry allowing immediate access to family tracking.",
-    src: "/images/projects/buswatch/signin.png",
+    title: "Live Telemetry & Driver Alerts",
+    description: "Map telemetry with real-time GPS path, 10-min ETA, and driver pickup notification triggers.",
+    src: "/images/projects/buswatch/driver-pickup.png",
   },
 ];
 
 const buswatchAdditionalGallery: FlowStep[] = [
   {
     step: "Step 01",
-    title: "Parent Account Creation",
+    title: "Account Security & Login",
+    description: "Secure authentication interface for parents and guardians to access real-time transit data.",
+    src: "/images/projects/buswatch/signin.png",
+  },
+  {
+    step: "Step 02",
+    title: "Guardian Profile Setup",
     description: "Guardian registration capturing verified contact details, language preferences, and secure credentials.",
     src: "/images/projects/buswatch/register-parent.png",
   },
   {
-    step: "Step 02",
+    step: "Step 03",
     title: "Student Enrollment",
     description: "Detailed student profile with photo capture, school name, class grade, and official enrollment forms.",
     src: "/images/projects/buswatch/register-child.png",
   },
   {
-    step: "Step 03",
+    step: "Step 04",
     title: "Medical & Safety Profile",
     description: "Critical emergency triage capturing blood type, active allergies, medications, and emergency contacts.",
     src: "/images/projects/buswatch/register-medical.png",
-  },
-  {
-    step: "Step 04",
-    title: "Geolocation Permission",
-    description: "System location access dialog enabling automatic proximity tracking when the bus approaches.",
-    src: "/images/projects/buswatch/location-permission.png",
   },
 ];
 
