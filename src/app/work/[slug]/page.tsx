@@ -48,6 +48,12 @@ export async function generateMetadata({
 // -------------------------------------------------------------
 const buswatchScreens: ScreenItem[] = [
   {
+    id: "splash-screen",
+    title: "Brand Splash Screen",
+    src: "/images/projects/buswatch/splash.png",
+    caption: "Official BusWatch brand launch screen featuring the signature school bus yellow identity, navigation pin, and wireless signal indicator.",
+  },
+  {
     id: "parent-dashboard",
     title: "Parent Home Dashboard",
     src: "/images/projects/buswatch/routes-list.png",
@@ -82,6 +88,30 @@ const buswatchScreens: ScreenItem[] = [
     title: "Safety & Emergency Form",
     src: "/images/projects/buswatch/home-map.png",
     caption: "Dedicated safety registration form capturing blood type, allergies, medical conditions, and dual emergency contact information.",
+  },
+  {
+    id: "bus-info",
+    title: "Bus & Driver Info",
+    src: "/images/projects/buswatch/bus-info.png",
+    caption: "Bus details screen showing active status, seat availability (12 seats), capacity (40 students), and verified driver credentials.",
+  },
+  {
+    id: "parent-details",
+    title: "Parent Details & Children",
+    src: "/images/projects/buswatch/parent-details.png",
+    caption: "Parent profile details displaying registered children (Justin & Kylie Wilson: 'AT HOME') and emergency contact numbers.",
+  },
+  {
+    id: "student-general",
+    title: "Student Details: General",
+    src: "/images/projects/buswatch/student-details.png",
+    caption: "Student general information capturing school enrollment (The Immaculate Mother Academy), residential address, and parent behavioral notes.",
+  },
+  {
+    id: "student-medical",
+    title: "Student Details: Medical",
+    src: "/images/projects/buswatch/student-medical.png",
+    caption: "Comprehensive medical and allergy profile tracking Blood Type A+, health insurance, primary physician, dietary restrictions, and emergency inhaler/EpiPen instructions.",
   },
 ];
 
