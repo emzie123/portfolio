@@ -113,6 +113,30 @@ const buswatchScreens: ScreenItem[] = [
     src: "/images/projects/buswatch/driver-pickup.png",
     caption: "Driver verified profile (Mike Johnson), scheduled morning pickup location, and instant 'Notify me when 5 mins away' alert trigger.",
   },
+  {
+    id: "bus-details",
+    title: "Bus & Driver Details",
+    src: "/images/projects/buswatch/bus-details.png",
+    caption: "Comprehensive vehicle and operator dossier detailing Bus-001 capacity (40 students, 12 seats available), active route status, and verified driver Mike Johnson's credentials.",
+  },
+  {
+    id: "parent-details",
+    title: "Parent Details & Children",
+    src: "/images/projects/buswatch/parent-details.png",
+    caption: "Guardian profile management displaying approved parent credentials, primary emergency contact channels, and enrolled children with real-time status indicators.",
+  },
+  {
+    id: "student-details",
+    title: "Student Details (General)",
+    src: "/images/projects/buswatch/student-details.png",
+    caption: "Student general information record featuring student photo, school institution, grade level, home pickup address, and personalized behavioral transit notes.",
+  },
+  {
+    id: "student-medical",
+    title: "Student Details (Medical)",
+    src: "/images/projects/buswatch/student-medical.png",
+    caption: "Comprehensive medical and emergency safety ledger detailing blood type (A+), insurance policy, primary physician contacts, allergen warnings, medications, and dietary restrictions.",
+  },
 ];
 
 const buswatchFlowSteps: FlowStep[] = [
@@ -139,6 +163,33 @@ const buswatchFlowSteps: FlowStep[] = [
     title: "Live Telemetry & Driver Alerts",
     description: "Map telemetry with real-time GPS path, 10-min ETA, and driver pickup notification triggers.",
     src: "/images/projects/buswatch/driver-pickup.png",
+  },
+];
+
+const buswatchDossierGallery: FlowStep[] = [
+  {
+    step: "Step 01",
+    title: "Bus Fleet & Driver Verification",
+    description: "Detailed vehicle dossier indicating 40-student capacity, 12 available seats, active status, and verified driver credentials.",
+    src: "/images/projects/buswatch/bus-details.png",
+  },
+  {
+    step: "Step 02",
+    title: "Guardian & Multi-Child Management",
+    description: "Guardian management card tracking enrolled children with real-time location tags (e.g., 'At Home') and direct emergency contacts.",
+    src: "/images/projects/buswatch/parent-details.png",
+  },
+  {
+    step: "Step 03",
+    title: "Student Academic & Transit Dossier",
+    description: "Comprehensive student profile detailing academic grade, school institution, home pickup address, and special behavioral transit notes.",
+    src: "/images/projects/buswatch/student-details.png",
+  },
+  {
+    step: "Step 04",
+    title: "Medical Profile & Emergency Safety",
+    description: "Critical safety ledger containing blood type, medical insurance policy, primary physician contacts, allergies, and emergency medications.",
+    src: "/images/projects/buswatch/student-medical.png",
   },
 ];
 
@@ -433,6 +484,18 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
               title={`${project.title} — Extended Design Modules & UI Catalog`}
               subtitle="Additional interface screens, modals, and management systems designed for this platform."
               aspectRatio={isBusWatch ? "phone" : "desktop"}
+            />
+          </ScrollReveal>
+        )}
+
+        {/* Vehicle & Student Dossiers Gallery (Last Part) */}
+        {isBusWatch && (
+          <ScrollReveal>
+            <FlowGallery
+              steps={buswatchDossierGallery}
+              title="BusWatch — Fleet Telemetry & Student Safety Dossiers"
+              subtitle="Comprehensive operational screens covering bus fleet telemetry, driver verification, guardian contacts, and student medical profiles."
+              aspectRatio="phone"
             />
           </ScrollReveal>
         )}
