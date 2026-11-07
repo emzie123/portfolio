@@ -72,16 +72,10 @@ const buswatchScreens: ScreenItem[] = [
     caption: "First onboarding step educating parents on accurate live GPS route updates and arrival predictability.",
   },
   {
-    id: "onboarding-2",
-    title: "Onboarding: Instant Alerts",
-    src: "/images/projects/buswatch/onboarding-2.png",
-    caption: "Second onboarding step highlighting automated push notifications when the bus is approaching the pickup radius.",
-  },
-  {
-    id: "onboarding-3",
-    title: "Onboarding: Schedule Safety",
+    id: "sign-in",
+    title: "Parent Account Sign In",
     src: "/images/projects/buswatch/onboarding-3.png",
-    caption: "Third onboarding step introducing timetable schedules, stop changes, and student boarding confirmations.",
+    caption: "Secure parent authentication screen for accessing student routes and bus telemetry.",
   },
   {
     id: "safety-registration",
