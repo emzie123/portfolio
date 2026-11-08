@@ -92,7 +92,7 @@ export default function AboutPage() {
             <div>
               <span className="section-label">About Emilita</span>
               <h1 className={styles.aboutName}>Emilita D. Cristobal</h1>
-              <span className={styles.aboutRole}>Senior UI/UX Designer</span>
+              <span className={styles.aboutRole}>UI/UX Designer</span>
               <p className={styles.aboutBio}>
                 Hi, I&apos;m Emilita — a UI/UX designer passionate about designing
                 interfaces that feel effortless, intuitive, and visually elevated.
