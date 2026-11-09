@@ -10,7 +10,7 @@ interface LightboxProps {
   currentIndex: number;
   isOpen: boolean;
   onClose: () => void;
-  onNavigate: (index: number) => void;
+  onNavigate?: (index: number) => void;
 }
 
 export default function Lightbox({
@@ -37,9 +37,9 @@ export default function Lightbox({
       if (!isOpen) return;
       if (e.key === "Escape") onClose();
       if (e.key === "ArrowRight")
-        onNavigate((currentIndex + 1) % images.length);
+        onNavigate?.((currentIndex + 1) % images.length);
       if (e.key === "ArrowLeft")
-        onNavigate((currentIndex - 1 + images.length) % images.length);
+        onNavigate?.((currentIndex - 1 + images.length) % images.length);
     },
     [isOpen, currentIndex, images.length, onClose, onNavigate]
   );
@@ -156,7 +156,7 @@ export default function Lightbox({
               type="button"
               className={`${styles.navBtn} ${styles.prevBtn}`}
               onClick={() =>
-                onNavigate(
+                onNavigate?.(
                   (currentIndex - 1 + images.length) % images.length
                 )
               }
@@ -191,7 +191,7 @@ export default function Lightbox({
               type="button"
               className={`${styles.navBtn} ${styles.nextBtn}`}
               onClick={() =>
-                onNavigate((currentIndex + 1) % images.length)
+                onNavigate?.((currentIndex + 1) % images.length)
               }
               aria-label="Next screen"
             >
@@ -215,7 +215,7 @@ export default function Lightbox({
                   className={`${styles.thumbBtn} ${
                     idx === currentIndex ? styles.thumbActive : ""
                   }`}
-                  onClick={() => onNavigate(idx)}
+                  onClick={() => onNavigate?.(idx)}
                   title={img.title || `Screen ${idx + 1}`}
                 >
                   <Image

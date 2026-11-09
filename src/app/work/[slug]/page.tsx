@@ -8,6 +8,7 @@ import MarkdocRenderer from "@/components/MarkdocRenderer";
 import DeviceFrame, { type ScreenItem } from "@/components/DeviceFrame";
 import FlowGallery, { type FlowStep } from "@/components/FlowGallery";
 import BerryGuardShowcase from "@/components/BerryGuardShowcase";
+import KangkongBreadShowcase from "@/components/KangkongBreadShowcase";
 import styles from "./caseStudy.module.css";
 
 interface CaseStudyPageProps {
@@ -396,13 +397,20 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
   // Screen selection based on slug
   const isBusWatch = slug === "buswatch";
   const isBerryGuard = slug === "berryguard";
+  const isKangkongBread = slug === "kangkong-bread";
   const screens = isBusWatch ? buswatchScreens : veraeScreens;
   const flowSteps = isBusWatch ? buswatchFlowSteps : veraeFlowSteps;
   const additionalGallery = isBusWatch
     ? buswatchAdditionalGallery
     : veraeAdditionalGallery;
   const deviceType = isBusWatch ? "phone" : "desktop";
-  const themeColor = isBusWatch ? "#F59E0B" : isBerryGuard ? "#C0392B" : "#0F3830";
+  const themeColor = isBusWatch
+    ? "#F59E0B"
+    : isBerryGuard
+    ? "#C0392B"
+    : isKangkongBread
+    ? "#2E7D32"
+    : "#0F3830";
 
   return (
     <article id={`case-study-${slug}`}>
@@ -436,8 +444,15 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
           </ScrollReveal>
         )}
 
+        {/* Showcase for Kangkong Bread */}
+        {isKangkongBread && (
+          <ScrollReveal direction="scale">
+            <KangkongBreadShowcase themeColor={themeColor} />
+          </ScrollReveal>
+        )}
+
         {/* Interactive Device Showcase with Clean Single-Screen Tabs */}
-        {!isBerryGuard && (
+        {!isBerryGuard && !isKangkongBread && (
           <ScrollReveal direction="scale">
             <DeviceFrame
               type={deviceType}
@@ -504,7 +519,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
         </ScrollReveal>
 
         {/* Primary Experience Architecture Flow (4-Card Responsive Grid) */}
-        {!isBerryGuard && (
+        {!isBerryGuard && !isKangkongBread && (
           <ScrollReveal>
             <FlowGallery
               steps={flowSteps}
@@ -516,7 +531,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
         )}
 
         {/* Additional Screens & UI Kit Catalog (4-Card Responsive Grid) */}
-        {!isBerryGuard && additionalGallery.length > 0 && (
+        {!isBerryGuard && !isKangkongBread && additionalGallery.length > 0 && (
           <ScrollReveal>
             <FlowGallery
               steps={additionalGallery}

@@ -25,7 +25,9 @@ export default function ProjectCard({
       ? "/images/projects/buswatch/splash.png"
       : slug === "berryguard"
         ? "/images/projects/berryguard/logo.png"
-        : "/images/projects/verae/orders-ledger.png";
+        : slug === "kangkong-bread"
+          ? "/images/projects/kangkong-bread/poster.jpg"
+          : "/images/projects/verae/orders-ledger.png";
 
   const imageSrc = coverImage || fallbackImage;
 

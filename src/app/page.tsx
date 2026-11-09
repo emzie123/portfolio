@@ -22,7 +22,7 @@ export default async function HomePage() {
     featuredProjects = allProjects
       .filter((p) => p.entry.featured)
       .sort((a, b) => (a.entry.sortOrder ?? 0) - (b.entry.sortOrder ?? 0))
-      .slice(0, 3)
+      .slice(0, 4)
       .map((p) => ({
         slug: p.slug,
         title: p.entry.title,

@@ -1,0 +1,175 @@
+.showcaseContainer {
+  margin: 2rem 0 3.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.imageCard {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: zoom-in;
+  outline: none;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 580px;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--color-surface);
+  border: 1px solid rgba(46, 125, 50, 0.25);
+  border-radius: var(--radius-xl);
+  padding: 1.5rem;
+  box-shadow:
+    0 16px 48px rgba(46, 125, 50, 0.15),
+    0 4px 16px rgba(0, 0, 0, 0.4);
+  transition: transform var(--duration-base) var(--ease-spring),
+    box-shadow var(--duration-base) var(--ease-spring),
+    border-color var(--duration-base) var(--ease-out);
+  overflow: hidden;
+}
+
+.imageCard:hover .imageWrapper,
+.imageCard:focus-visible .imageWrapper {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow:
+    0 24px 60px rgba(46, 125, 50, 0.25),
+    0 8px 24px rgba(0, 0, 0, 0.5);
+  border-color: rgba(76, 175, 80, 0.5);
+}
+
+.image {
+  border-radius: var(--radius-lg);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  transition: transform var(--duration-normal) var(--ease-out);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.expandOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(10, 7, 18, 0.45);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  opacity: 0;
+  transition: opacity var(--duration-fast) var(--ease-out);
+  border-radius: var(--radius-xl);
+  pointer-events: none;
+}
+
+.imageCard:hover .expandOverlay,
+.imageCard:focus-visible .expandOverlay {
+  opacity: 1;
+}
+
+.expandBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(23, 19, 38, 0.85);
+  border: 1px solid rgba(76, 175, 80, 0.4);
+  color: #f6f3ff;
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--radius-full);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  transform: translateY(6px);
+  transition: transform var(--duration-normal) var(--ease-spring);
+}
+
+.imageCard:hover .expandBadge,
+.imageCard:focus-visible .expandBadge {
+  transform: translateY(0);
+}
+
+/* Caption bar */
+.captionBar {
+  margin-top: 1.5rem;
+  text-align: center;
+  max-width: 640px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.captionBadge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #4caf50;
+}
+
+.captionText {
+  font-size: 0.9375rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+/* Quick specs grid */
+.specsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  width: 100%;
+  max-width: 880px;
+  margin-top: 2.5rem;
+}
+
+.specCard {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  text-align: left;
+  transition: border-color 0.2s ease;
+}
+
+.specCard:hover {
+  border-color: rgba(76, 175, 80, 0.4);
+}
+
+.specLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-tertiary);
+}
+
+.specValue {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+@media (max-width: 768px) {
+  .specsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .imageWrapper {
+    max-width: 100%;
+    padding: 1rem;
+  }
+}

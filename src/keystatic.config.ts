@@ -24,6 +24,7 @@ export default config({
             { label: "Mobile Design", value: "Mobile Design" },
             { label: "UI Mockup", value: "UI Mockup" },
             { label: "Logo Design", value: "Logo Design" },
+            { label: "Graphic Design", value: "Graphic Design" },
           ],
           defaultValue: "Web Design",
         }),

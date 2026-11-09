@@ -14,7 +14,7 @@ interface Project {
   coverImage: string | null;
 }
 
-const categories = ["All", "Web Design", "Mobile Design", "UI Mockup"];
+const categories = ["All", "Web Design", "Mobile Design", "Logo Design", "Graphic Design"];
 
 export default function WorkGallery({ projects }: { projects: Project[] }) {
   const [activeCategory, setActiveCategory] = useState("All");
